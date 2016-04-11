@@ -5,4 +5,83 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_history">HistoryActivity</string>
+
+
+    <string name="history_about_text_1">
+        El Jardín Botánico La Laguna es un parque nacional
+        de El Salvador y jardín botánico de 46 manzanas de
+        extensión, de las cuales 4.5 manzanas están destinadas
+        para uso público, ubicado en el fondo de un cráter volcánico,
+        en el municipio de Antiguo Cuscatlán, departamento de La Libertad.
+    </string>
+    <string name="history_about_text_2">
+        Localización \n
+        \n
+        Jardín Botánico del Plan de la Laguna en el
+        kilómetro Nº 8 de la carretera panamericana, zona
+        industrial plan de La Laguna, al sur de la ciudad de
+        Antiguo Cuscatlán, Departamento de La Libertad (zona central de El Salvador).
+
+        \n
+        Planos y vistas satelitales.13°40′20″N 89°15′00″O
+
+        \n
+        - A 805 msnm.         \n
+
+
+        - Disfruta de una temperatura promedio de 23 °C y una humedad relativa de 75%.
+    </string>
+    <string name="history_about_text_3">
+        Historia \n \n
+            En el fondo de un cráter existía
+            durante muchos siglos una laguna,
+             hasta que afines del siglo XVIII
+             ocurrió la última erupción volcánica
+             transformándola en una zona semipantanosa; drenándose en su mayor parte debido al terremoto de 1873.
+
+            \n
+            Luego se convirtió en un área
+            muy fértil dedicándose por mucho
+            tiempo a la ganadería; sin embargo
+            parte de ella, pasó a formar parte
+            de un jardín privado con árboles
+            centenarios y otros traídos de muchas partes del mundo.
+
+            \n
+
+            En la década de los sesenta y setenta;
+            se construyó, en una parte de la zona,
+             un complejo industrial y el jardín privado
+             fue entregado a una asociación privada
+             para su manejo y conservación.
+            \n
+
+            Actualmente el sitio conocido como Jardín
+            Botánico La Laguna, fue abierto al público
+            el 22 de diciembre de 1978, con una extensión
+            total de 30 hectáreas; de las cuales 3.15 ha,
+            con una topografía plana, son de uso público;
+             el resto es un bosque primario que se encuentra
+              bajo condiciones de estricta reserva.
+
+            \n
+
+            Toda el área está distribuida en 32 zonas con
+            colecciones diversas de plantas, rotuladas por:
+            tipo de planta, nombre común, nombre científico,
+            familia y distribución; entre las que destacan:
+            helechos, plantas del desierto, plantas medicinales,
+             huerto casero, orquídeas, bromelias y áreas
+              boscosas de vegetación nativa.
+
+            \n
+            Asimismo tiene una biblioteca,
+            zona de juegos para niños y niñas,
+            en los que se pueden destacar;
+            columpios, subideros, y entre otros.
+        \n
+        \n
+    </string>
+
 </resources>

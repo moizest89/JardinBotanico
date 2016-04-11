@@ -1,14 +1,31 @@
 package com.moizest89.jbplandelalaguna.UI.Main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.UI.History.HistoryActivity;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+import static com.moizest89.jbplandelalaguna.Util.Util.changeActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    private final static Integer INTENT_HISTORY = 1000;
+
+
+    @Bind(R.id.IVActionHistoyr)
+    ImageView IVActionHistoyr;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +34,18 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        ButterKnife.bind(this);
+
 
     }
+
+
+    @OnClick(R.id.IVActionHistoyr)
+    public void actionHistory(){
+        changeActivity(this, HistoryActivity.class, null, false);
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
