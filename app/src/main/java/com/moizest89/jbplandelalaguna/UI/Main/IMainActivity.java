@@ -1,4 +1,4 @@
-package com.moizest89.jbplandelalaguna.Main;
+package com.moizest89.jbplandelalaguna.UI.Main;
 
 /**
  * Created by @moizest89 in SV on 4/10/16.
