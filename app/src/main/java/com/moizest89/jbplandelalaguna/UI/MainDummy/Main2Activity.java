@@ -1,4 +1,4 @@
-package com.moizest89.jbplandelalaguna.MainDummy;
+package com.moizest89.jbplandelalaguna.UI.MainDummy;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
