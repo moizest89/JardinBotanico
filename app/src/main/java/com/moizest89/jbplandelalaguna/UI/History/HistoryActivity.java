@@ -49,6 +49,8 @@ public class HistoryActivity extends AppCompatActivity {
     private void setToolbar(){
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle(getResources().getString(R.string.app_short_name));
+        getSupportActionBar().setSubtitle(getResources().getString(R.string.history_title));
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
