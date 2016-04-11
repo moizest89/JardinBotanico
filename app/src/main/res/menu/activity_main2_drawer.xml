@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/historia"
+            android:title="Historia" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/mapa"
+            android:title="Mapa" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/vivero"
+            android:title="Vivero" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/tips"
+            android:title="Tips" />
+        <item
+            android:id="@+id/nav_manage_2"
+            android:icon="@drawable/contactanos"
+            android:title="Contactanos" />
+    </group>
+
+</menu>
