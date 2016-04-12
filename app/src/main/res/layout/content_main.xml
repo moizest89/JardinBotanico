@@ -21,7 +21,7 @@
             android:layout_weight="0.5"
             android:scaleType="fitXY"
             android:padding="20dp"
-            android:id="@+id/IVActionHistoyr"
+            android:id="@+id/IVActionHistoy"
             android:src="@drawable/historia"/>
         <ImageView
             android:layout_width="match_parent"
@@ -29,6 +29,7 @@
             android:layout_weight="0.5"
             android:scaleType="fitCenter"
             android:padding="20dp"
+            android:id="@+id/IVActionPlace"
             android:src="@drawable/mapa"/>
     </LinearLayout>
     <LinearLayout

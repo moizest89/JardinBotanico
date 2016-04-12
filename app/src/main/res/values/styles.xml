@@ -17,4 +17,18 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="Widget.AppTheme.ActionBar" parent="Widget.AppCompat.ActionBar.Solid">
+        <!-- action bar background -->
+        <item name="background">@color/colorPrimary</item>
+        <!-- action bar elevation -->
+        <item name="elevation">4dp</item>
+    </style>
+
+    <style name="Widget.MyApp.HeaderBar.Spinner" parent="android:Widget.Holo.Light.Spinner">
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:dropDownSelector">@color/colorPrimaryDark</item>
+        <item name="android:divider">@null</item>
+        <item name="android:overlapAnchor">true</item>
+    </style>
+
 </resources>

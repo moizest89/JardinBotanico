@@ -21,10 +21,14 @@
         <activity
             android:name=".UI.MainDummy.Main2Activity"
             android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UI.History.HistoryActivity"
             android:label="@string/title_activity_history"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Place.PlaceActivity"
+            android:label="@string/title_activity_place"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
