@@ -86,6 +86,13 @@
         \n
         \n
     </string>
+
+
     <string name="title_activity_place">PlaceActivity</string>
+    <string name="place_title">Mapa</string>
+    <string name="place_spinner_label_select_item">Selecciona una zona del lugar</string>
+    <string name="place_spinner_label_zone">Zona</string>
+
+
 
 </resources>

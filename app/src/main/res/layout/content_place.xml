@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimaryLight"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.moizest89.jbplandelalaguna.UI.Place.PlaceActivity"
     tools:showIn="@layout/activity_place">
@@ -31,6 +32,17 @@
         </LinearLayout>
 
     </android.support.v7.widget.Toolbar>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <com.moizest89.jbplandelalaguna.Util.TouchImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/TIVDetail"
+            android:scaleType="fitCenter"
+            android:src="@drawable/place_map"/>
+    </FrameLayout>
 
 
 </LinearLayout>
