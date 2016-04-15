@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
@@ -84,6 +85,13 @@ public class PlaceActivity extends AppCompatActivity implements IPlaceActivity,
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         Log.e(TAG, "onNothingSelected");
-        Log.e(TAG, "parent.getFirstVisiblePosition(): "+parent.getFirstVisiblePosition());
+        Log.e(TAG, "parent.getFirstVisiblePosition(): " + parent.getFirstVisiblePosition());
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_qr, menu);
+        return true;
     }
 }

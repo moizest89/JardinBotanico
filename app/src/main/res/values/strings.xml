@@ -92,7 +92,7 @@
     <string name="place_title">Mapa</string>
     <string name="place_spinner_label_select_item">Selecciona una zona del lugar</string>
     <string name="place_spinner_label_zone">Zona</string>
-
+    <string name="menu_action_qr_code">Scanear codigo QR</string>
 
 
 </resources>
