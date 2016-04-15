@@ -93,6 +93,7 @@
     <string name="place_spinner_label_select_item">Selecciona una zona del lugar</string>
     <string name="place_spinner_label_zone">Zona</string>
     <string name="menu_action_qr_code">Scanear codigo QR</string>
+    <string name="title_activity_contact">ContactActivity</string>
 
 
 </resources>

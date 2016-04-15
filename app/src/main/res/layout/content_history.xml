@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <com.moizest89.jbplandelalaguna.Util.DynamicImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
@@ -29,7 +29,7 @@
                 android:textSize="16sp"
                 android:text="@string/history_about_text_1"/>
 
-            <ImageView
+            <com.moizest89.jbplandelalaguna.Util.DynamicImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
@@ -42,7 +42,7 @@
                 android:textSize="16sp"
                 android:text="@string/history_about_text_2"/>
 
-            <ImageView
+            <com.moizest89.jbplandelalaguna.Util.DynamicImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"

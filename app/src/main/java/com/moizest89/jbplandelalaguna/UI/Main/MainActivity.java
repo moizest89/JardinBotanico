@@ -2,6 +2,7 @@ package com.moizest89.jbplandelalaguna.UI.Main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.UI.Contact.ContactActivity;
 import com.moizest89.jbplandelalaguna.UI.History.HistoryActivity;
 import com.moizest89.jbplandelalaguna.UI.Place.PlaceActivity;
 
@@ -25,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
     private final static Integer INTENT_HISTORY = 1000;
 
 
-    @Bind(R.id.IVActionHistoy)
+    @Nullable @Bind(R.id.IVActionHistoy)
     ImageView IVActionHistoyr;
 
-    @Bind(R.id.IVActionPlace)
+    @Nullable @Bind(R.id.IVActionPlace)
     ImageView IVActionPlace;
 
 
@@ -45,18 +47,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick(R.id.IVActionHistoy)
+    @Nullable @OnClick(R.id.IVActionHistoy)
     public void actionHistory(View view){
         changeActivity(this, HistoryActivity.class, null, false);
     }
 
-    @OnClick(R.id.IVActionPlace)
+    @Nullable @OnClick(R.id.IVActionPlace)
     public void actionToPlace(View view){
         changeActivity(this, PlaceActivity.class, null, false);
     }
 
 
-
+    @Nullable @OnClick(R.id.IVActionContact)
+    public void actionToContact(View view){
+        changeActivity(this, ContactActivity.class, null, false);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
