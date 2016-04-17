@@ -126,5 +126,17 @@
     <string name="contact_mail_label">Correo</string>
     <string name="contact_mail_item">info@tinmaring.ong</string>
     <string name="label_bus_routes">Ver Ruta de buses</string>
+    <string name="title_activity_how_to_arrive">HowToArriveActivity</string>
+    <string name="how_to_arrive_label_direction">
+        Ubicado en el fondo de un cráter volcánico en La Libertad, El Salvador a 805 msnm,
+        coordenadas 13°40’ 20’ N y 89°15’ 00’ W, T° Temperatura promedio: 23°C,
+        Humedad relativa: 75%. \n \n
+        Extensión 60 mz y una Colección de más de 3,500 especies de plantas Exóticas y Nativas
+         \n \n
+        Dirección postal: Urb. Industrial Plan de La Laguna, AP 1197 CG,
+        Antiguo. Cuscatlán La Libertad, El Salvador,
+        Centroamérica o  Club VIP No. 226, P.O. Box
+        025364, Miami, Fl.33102- 5364
+    </string>
 
 </resources>

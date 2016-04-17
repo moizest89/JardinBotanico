@@ -33,6 +33,10 @@
         <activity
             android:name=".UI.Contact.Main.ContactActivity"
             android:label="@string/title_activity_contact"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Contact.HowToArrive.HowToArriveActivity"
+            android:label="@string/title_activity_how_to_arrive"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
