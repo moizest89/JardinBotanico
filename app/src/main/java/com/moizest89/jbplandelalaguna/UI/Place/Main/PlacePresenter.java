@@ -1,4 +1,4 @@
-package com.moizest89.jbplandelalaguna.UI.Place;
+package com.moizest89.jbplandelalaguna.UI.Place.Main;
 
 
 import com.moizest89.jbplandelalaguna.R;

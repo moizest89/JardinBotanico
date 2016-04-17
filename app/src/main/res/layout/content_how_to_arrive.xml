@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.moizest89.jbplandelalaguna.UI.Contact.HowToArrive.HowToArriveActivity"
+    tools:showIn="@layout/activity_how_to_arrive"
+    android:background="@color/colorPrimaryLight">
+
+    <com.moizest89.jbplandelalaguna.Util.DynamicImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DIVMap"
+        android:src="@drawable/plan_laguna_map"/>
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:id="@+id/TVHowTo"
+                android:textSize="16sp"
+                android:text="@string/how_to_arrive_label_direction"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

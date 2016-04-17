@@ -88,11 +88,58 @@
     </string>
 
 
+    <string name="dummy_sumple_text">Tralalala</string>
+
     <string name="title_activity_place">PlaceActivity</string>
     <string name="place_title">Mapa</string>
     <string name="place_spinner_label_select_item">Selecciona una zona del lugar</string>
     <string name="place_spinner_label_zone">Zona</string>
     <string name="menu_action_qr_code">Scanear codigo QR</string>
+    <string name="title_activity_contact">ContactActivity</string>
 
+    <string name="contact_title">Contactanos</string>
+    <string name="contact_label_days"> Martes a Domingo</string>
+    <string name="contact_label_days_hours">9:00a.m. a 5:30 p.m.</string>
+    <string name="contact_label_price">Contribución</string>
+    <string name="contact_price_adult">Adultos: $1.25</string>
+    <string name="contact_price_kids">Niños: $0.75</string>
+    <string name="contact_price_students">Estudiantes cita previa $0.60</string>
+    <string name="contact_label_telephones_numbers">Telefonos</string>
+    <string name="contact_label_phone_number_1">(503) 2243 - 2012</string>
+    <string name="contact_label_phone_number_2">(503) 2243 - 2013</string>
+    <string name="contact_label_email">jardinbotanico@jardinbotanico.org.sv</string>
+    <string name="contact_label_send_email">Envianos un correo</string>
+    <string name="contact_label_how_to_arrive">¿Sabes como llegar?</string>
+
+
+    <string name="contact_rate">TARIFAS ADULTOS Y NINOS</string>
+
+    <string name="contact_days">Martes a Sábado</string>
+    <string name="contact_rate1">Sala de Exhibiciones - $3.00 USD</string>
+    <string name="contact_satruday">Domingo</string>
+
+    <string name="contact_rate2">Sala de Exhibiciones - $2.50 USD</string>
+    <string name="contact_rate3">Planetario - $1.00 USD</string>
+    <string name="contact_phone_label">Telefono</string>
+
+    <string name="contact_phone_number">2268-6900</string>
+    <string name="contact_mail_label">Correo</string>
+    <string name="contact_mail_item">info@tinmaring.ong</string>
+    <string name="label_bus_routes">Ver Ruta de buses</string>
+    <string name="title_activity_how_to_arrive">HowToArriveActivity</string>
+    <string name="how_to_arrive_label_direction">
+        Ubicado en el fondo de un cráter volcánico en La Libertad, El Salvador a 805 msnm,
+        coordenadas 13°40’ 20’ N y 89°15’ 00’ W, T° Temperatura promedio: 23°C,
+        Humedad relativa: 75%. \n \n
+        Extensión 60 mz y una Colección de más de 3,500 especies de plantas Exóticas y Nativas
+         \n \n
+        Dirección postal: Urb. Industrial Plan de La Laguna, AP 1197 CG,
+        Antiguo. Cuscatlán La Libertad, El Salvador,
+        Centroamérica o  Club VIP No. 226, P.O. Box
+        025364, Miami, Fl.33102- 5364
+    </string>
+    <string name="how_to_arrive_title">¿Sabes como llegar?</string>
+    <string name="how_to_arrive_label_open_in_googlemap">¿Deseas ver el mapa completo?</string>
+    <string name="contact_send_email_request">¿Deseas enviarnos un correo personal?</string>
 
 </resources>
