@@ -1,6 +1,5 @@
 package com.moizest89.jbplandelalaguna.UI.Main;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -11,9 +10,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.moizest89.jbplandelalaguna.R;
-import com.moizest89.jbplandelalaguna.UI.Contact.ContactActivity;
+import com.moizest89.jbplandelalaguna.UI.Contact.Main.ContactActivity;
 import com.moizest89.jbplandelalaguna.UI.History.HistoryActivity;
-import com.moizest89.jbplandelalaguna.UI.Place.PlaceActivity;
+import com.moizest89.jbplandelalaguna.UI.Place.Main.PlaceActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

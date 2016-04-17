@@ -27,11 +27,11 @@
             android:label="@string/title_activity_history"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".UI.Place.PlaceActivity"
+            android:name=".UI.Place.Main.PlaceActivity"
             android:label="@string/title_activity_place"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".UI.Contact.ContactActivity"
+            android:name=".UI.Contact.Main.ContactActivity"
             android:label="@string/title_activity_contact"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

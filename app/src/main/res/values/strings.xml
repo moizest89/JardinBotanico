@@ -97,7 +97,7 @@
     <string name="menu_action_qr_code">Scanear codigo QR</string>
     <string name="title_activity_contact">ContactActivity</string>
 
-
+    <string name="contact_title">Contactanos</string>
     <string name="contact_label_days"> Martes a Domingo</string>
     <string name="contact_label_days_hours">9:00a.m. a 5:30 p.m.</string>
     <string name="contact_label_price">Contribución</string>
