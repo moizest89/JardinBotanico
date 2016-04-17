@@ -88,6 +88,8 @@
     </string>
 
 
+    <string name="dummy_sumple_text">Tralalala</string>
+
     <string name="title_activity_place">PlaceActivity</string>
     <string name="place_title">Mapa</string>
     <string name="place_spinner_label_select_item">Selecciona una zona del lugar</string>
@@ -95,5 +97,34 @@
     <string name="menu_action_qr_code">Scanear codigo QR</string>
     <string name="title_activity_contact">ContactActivity</string>
 
+
+    <string name="contact_label_days"> Martes a Domingo</string>
+    <string name="contact_label_days_hours">9:00a.m. a 5:30 p.m.</string>
+    <string name="contact_label_price">Contribución</string>
+    <string name="contact_price_adult">Adultos: $1.25</string>
+    <string name="contact_price_kids">Niños: $0.75</string>
+    <string name="contact_price_students">Estudiantes cita previa $0.60</string>
+    <string name="contact_label_telephones_numbers">Telefonos</string>
+    <string name="contact_label_phone_number_1">(503) 2243 - 2012</string>
+    <string name="contact_label_phone_number_2">(503) 2243 - 2013</string>
+    <string name="contact_label_email">jardinbotanico@jardinbotanico.org.sv</string>
+    <string name="contact_label_send_email">Envianos un correo</string>
+    <string name="contact_label_how_to_arrive">¿Sabes como llegar?</string>
+
+
+    <string name="contact_rate">TARIFAS ADULTOS Y NINOS</string>
+
+    <string name="contact_days">Martes a Sábado</string>
+    <string name="contact_rate1">Sala de Exhibiciones - $3.00 USD</string>
+    <string name="contact_satruday">Domingo</string>
+
+    <string name="contact_rate2">Sala de Exhibiciones - $2.50 USD</string>
+    <string name="contact_rate3">Planetario - $1.00 USD</string>
+    <string name="contact_phone_label">Telefono</string>
+
+    <string name="contact_phone_number">2268-6900</string>
+    <string name="contact_mail_label">Correo</string>
+    <string name="contact_mail_item">info@tinmaring.ong</string>
+    <string name="label_bus_routes">Ver Ruta de buses</string>
 
 </resources>
