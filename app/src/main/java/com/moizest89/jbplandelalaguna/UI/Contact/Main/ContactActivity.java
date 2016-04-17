@@ -1,13 +1,16 @@
 package com.moizest89.jbplandelalaguna.UI.Contact.Main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.UI.ConfirmationDialog.ConfirmationDialog;
 import com.moizest89.jbplandelalaguna.UI.Contact.HowToArrive.HowToArriveActivity;
 
 import butterknife.Bind;
@@ -16,11 +19,15 @@ import butterknife.OnClick;
 
 import static com.moizest89.jbplandelalaguna.Util.Util.changeActivity;
 
-public class ContactActivity extends AppCompatActivity {
+public class ContactActivity extends AppCompatActivity implements ConfirmationDialog.ConfirmationDialogListener{
 
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
+
+
+    private final static String TAG = ContactActivity.class.getSimpleName();
+    private final static Integer CONFIRMATION_EMAIL = 100;
 
 
     @Override
@@ -57,4 +64,30 @@ public class ContactActivity extends AppCompatActivity {
         changeActivity(this, HowToArriveActivity.class, null, false);
     }
 
+    @OnClick(R.id.BTSendEmail)
+    public void action_send_email(View view){
+
+        String mMessage = this.getResources().getString(R.string.contact_send_email_request);
+        DialogFragment dialog = ConfirmationDialog.newInstance(mMessage,CONFIRMATION_EMAIL);
+        dialog.show(getSupportFragmentManager(), TAG);
+
+
+    }
+
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog, Integer origin) {
+        if(origin == CONFIRMATION_EMAIL){
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_EMAIL, "jardinbotanico@jardinbotanico.org.sv");
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Hola jardin Botanico");
+            startActivity(Intent.createChooser(intent, "Send Email"));
+        }
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog, Integer origin) {
+
+    }
 }

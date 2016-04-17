@@ -13,6 +13,7 @@
     <com.moizest89.jbplandelalaguna.Util.DynamicImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/DIVMap"
         android:src="@drawable/plan_laguna_map"/>
 
 

@@ -139,5 +139,7 @@
         025364, Miami, Fl.33102- 5364
     </string>
     <string name="how_to_arrive_title">¿Sabes como llegar?</string>
+    <string name="how_to_arrive_label_open_in_googlemap">¿Deseas ver el mapa completo?</string>
+    <string name="contact_send_email_request">¿Deseas enviarnos un correo personal?</string>
 
 </resources>
