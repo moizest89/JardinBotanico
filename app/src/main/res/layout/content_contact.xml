@@ -233,7 +233,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:id="@+id/BTGoToRoutes"
+                android:id="@+id/BThowToArrive"
                 android:text="@string/contact_label_how_to_arrive"
                 />
 

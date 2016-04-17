@@ -7,7 +7,8 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.moizest89.jbplandelalaguna.UI.Contact.HowToArrive.HowToArriveActivity"
-    tools:showIn="@layout/activity_how_to_arrive">
+    tools:showIn="@layout/activity_how_to_arrive"
+    android:background="@color/colorPrimaryLight">
 
     <com.moizest89.jbplandelalaguna.Util.DynamicImageView
         android:layout_width="match_parent"
@@ -15,9 +16,24 @@
         android:src="@drawable/plan_laguna_map"/>
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/how_to_arrive_label_direction"/>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:id="@+id/TVHowTo"
+                android:textSize="16sp"
+                android:text="@string/how_to_arrive_label_direction"/>
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>

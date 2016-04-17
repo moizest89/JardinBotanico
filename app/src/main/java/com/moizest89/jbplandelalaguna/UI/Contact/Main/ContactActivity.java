@@ -8,9 +8,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.UI.Contact.HowToArrive.HowToArriveActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+import static com.moizest89.jbplandelalaguna.Util.Util.changeActivity;
 
 public class ContactActivity extends AppCompatActivity {
 
@@ -46,4 +50,11 @@ public class ContactActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    @OnClick(R.id.BThowToArrive)
+    public void action_how_to_arrive(View view){
+        changeActivity(this, HowToArriveActivity.class, null, false);
+    }
+
 }

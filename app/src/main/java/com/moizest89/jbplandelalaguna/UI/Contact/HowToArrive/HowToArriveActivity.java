@@ -6,8 +6,10 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.Util.Fonts;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -16,6 +18,8 @@ public class HowToArriveActivity extends AppCompatActivity {
 
 
     @Bind(R.id.toolbar) Toolbar toolbar;
+    @Bind(R.id.TVHowTo)
+    TextView TVHowTo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,8 @@ public class HowToArriveActivity extends AppCompatActivity {
 
         setToolbar();
 
+        this.TVHowTo.setTypeface(new Fonts().RobotoCondensed_Regular(this));
+
     }
 
 
@@ -35,7 +41,7 @@ public class HowToArriveActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setTitle(getResources().getString(R.string.app_short_name));
-        getSupportActionBar().setSubtitle(getResources().getString(R.string.contact_title));
+        getSupportActionBar().setSubtitle(getResources().getString(R.string.how_to_arrive_title));
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
