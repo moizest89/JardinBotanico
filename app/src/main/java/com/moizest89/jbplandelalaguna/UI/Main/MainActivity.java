@@ -13,6 +13,7 @@ import com.moizest89.jbplandelalaguna.R;
 import com.moizest89.jbplandelalaguna.UI.Contact.Main.ContactActivity;
 import com.moizest89.jbplandelalaguna.UI.History.HistoryActivity;
 import com.moizest89.jbplandelalaguna.UI.Place.Main.PlaceActivity;
+import com.moizest89.jbplandelalaguna.UI.Vivarium.VivariumActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -60,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
     @Nullable @OnClick(R.id.IVActionContact)
     public void actionToContact(View view){
         changeActivity(this, ContactActivity.class, null, false);
+    }
+
+    @Nullable @OnClick(R.id.IVVivarium)
+    public void actionToVivarium(View view){
+        changeActivity(this, VivariumActivity.class, null, false);
     }
 
     @Override

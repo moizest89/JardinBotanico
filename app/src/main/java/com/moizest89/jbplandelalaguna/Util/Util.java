@@ -11,6 +11,9 @@ import android.view.View;
  */
 public class Util {
 
+
+    public final static Integer ANIMATION_DURATION = 1200;
+
     public static void changeActivity(Context context, Class<?> target, Bundle options, boolean finish) {
         Intent i = new Intent(context, target);
 

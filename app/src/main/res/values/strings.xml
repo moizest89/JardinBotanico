@@ -141,5 +141,7 @@
     <string name="how_to_arrive_title">¿Sabes como llegar?</string>
     <string name="how_to_arrive_label_open_in_googlemap">¿Deseas ver el mapa completo?</string>
     <string name="contact_send_email_request">¿Deseas enviarnos un correo personal?</string>
+    <string name="title_activity_vivarium">VivariumActivity</string>
+    <string name="vivarium_title">Vivero</string>
 
 </resources>

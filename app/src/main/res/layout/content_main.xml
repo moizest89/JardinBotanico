@@ -43,6 +43,7 @@
             android:layout_weight="0.5"
             android:scaleType="fitCenter"
             android:padding="20dp"
+            android:id="@+id/IVVivarium"
             android:src="@drawable/vivero"/>
         <ImageView
             android:layout_width="match_parent"
