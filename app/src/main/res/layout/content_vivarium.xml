@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryLight"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.moizest89.jbplandelalaguna.UI.Vivarium.VivariumActivity"
+    tools:context=".UI.Vivarium.Main.VivariumActivity"
     tools:showIn="@layout/activity_vivarium">
 
 

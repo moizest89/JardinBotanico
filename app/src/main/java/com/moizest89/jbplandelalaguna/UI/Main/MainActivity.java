@@ -14,7 +14,7 @@ import com.moizest89.jbplandelalaguna.UI.BarcodeView.BarcodeActivity;
 import com.moizest89.jbplandelalaguna.UI.Contact.Main.ContactActivity;
 import com.moizest89.jbplandelalaguna.UI.History.HistoryActivity;
 import com.moizest89.jbplandelalaguna.UI.Place.Main.PlaceActivity;
-import com.moizest89.jbplandelalaguna.UI.Vivarium.VivariumActivity;
+import com.moizest89.jbplandelalaguna.UI.Vivarium.Main.VivariumActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

@@ -27,6 +27,9 @@ public class DummyAdapter extends RecyclerView.Adapter<DummyAdapter.Holder> {
     private Context context;
     private final static String TAG = DummyAdapter.class.getSimpleName();
 
+    OnItemClickListener mOnItemClickListener;
+
+
     public DummyAdapter(List<DummyData> mData, Context context) {
         this.mData = mData;
         this.context = context;
@@ -62,7 +65,7 @@ public class DummyAdapter extends RecyclerView.Adapter<DummyAdapter.Holder> {
         return this.mData.size();
     }
 
-    public class Holder extends RecyclerView.ViewHolder {
+    public class Holder extends RecyclerView.ViewHolder implements  View.OnClickListener{
 
         @Bind(R.id.IVCell)
         ImageViewWithRatio IVCell;
@@ -76,6 +79,20 @@ public class DummyAdapter extends RecyclerView.Adapter<DummyAdapter.Holder> {
             IVCell.setX(3.0f);
             IVCell.setY(2.0f);
 
+            itemView.setOnClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View v) {
+            mOnItemClickListener.onItemClickListener(v, getAdapterPosition());
         }
     }
+
+    public void setOnItemClickListener(final OnItemClickListener onItemClickListener){
+        this.mOnItemClickListener = onItemClickListener;
+    }
+
+
+
 }

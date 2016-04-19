@@ -1,4 +1,4 @@
-package com.moizest89.jbplandelalaguna.UI.Vivarium;
+package com.moizest89.jbplandelalaguna.UI.Vivarium.Main;
 
 import com.moizest89.jbplandelalaguna.Data.models.DummyData;
 

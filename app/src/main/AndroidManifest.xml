@@ -41,12 +41,16 @@
             android:label="@string/title_activity_how_to_arrive"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".UI.Vivarium.VivariumActivity"
+            android:name=".UI.Vivarium.Main.VivariumActivity"
             android:label="@string/title_activity_vivarium"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UI.BarcodeView.BarcodeActivity"
             android:label="@string/title_activity_barcode"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Vivarium.Details.VivariumDetailsActivity"
+            android:label="@string/title_activity_vivarium"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

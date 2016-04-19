@@ -1,12 +1,10 @@
-package com.moizest89.jbplandelalaguna.UI.Vivarium;
+package com.moizest89.jbplandelalaguna.UI.Vivarium.Main;
 
 import android.util.Log;
 
-import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.moizest89.jbplandelalaguna.Data.Api.MySingleton;
 import com.moizest89.jbplandelalaguna.Data.models.DummyData;
 

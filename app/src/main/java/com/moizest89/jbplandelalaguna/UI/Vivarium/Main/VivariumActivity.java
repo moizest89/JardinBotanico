@@ -1,8 +1,6 @@
-package com.moizest89.jbplandelalaguna.UI.Vivarium;
+package com.moizest89.jbplandelalaguna.UI.Vivarium.Main;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,8 +11,11 @@ import android.view.View;
 
 import com.moizest89.jbplandelalaguna.Data.models.DummyData;
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.UI.BarcodeView.BarcodeActivity;
+import com.moizest89.jbplandelalaguna.UI.Vivarium.Details.VivariumDetailsActivity;
 import com.moizest89.jbplandelalaguna.Util.DummyAdapter;
 import com.moizest89.jbplandelalaguna.Util.MarginDecoration;
+import com.moizest89.jbplandelalaguna.Util.OnItemClickListener;
 import com.moizest89.jbplandelalaguna.Util.Util;
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -22,6 +23,8 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+
+import static com.moizest89.jbplandelalaguna.Util.Util.changeActivity;
 
 public class VivariumActivity extends AppCompatActivity implements IVivariumActivity{
 
@@ -104,10 +107,21 @@ public class VivariumActivity extends AppCompatActivity implements IVivariumActi
     @Override
     public void setData(List<DummyData> data) {
         Log.e(TAG, "setData");
-        Log.e(TAG, "data: "+ data.size());
+        Log.e(TAG, "data: " + data.size());
         DummyAdapter adapter = new DummyAdapter(data, this);
         this.RVList.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+
+        OnItemClickListener onItemClickListener = new OnItemClickListener() {
+            @Override
+            public void onItemClickListener(View view, Integer position) {
+//                DummyData dummyDataItem = data.get(position);
+                Log.e(TAG,"position: "+position);
+                changeActivity(VivariumActivity.this, VivariumDetailsActivity.class, null, false);
+            }
+        };
+
+        adapter.setOnItemClickListener(onItemClickListener);
 
     }
 }
