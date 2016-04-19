@@ -51,6 +51,7 @@
             android:layout_weight="0.5"
             android:scaleType="fitCenter"
             android:padding="20dp"
+            android:id="@+id/IVQrCode"
             android:src="@drawable/qr"/>
     </LinearLayout>
     <LinearLayout

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.UI.BarcodeView.BarcodeActivity;
 import com.moizest89.jbplandelalaguna.UI.Contact.Main.ContactActivity;
 import com.moizest89.jbplandelalaguna.UI.History.HistoryActivity;
 import com.moizest89.jbplandelalaguna.UI.Place.Main.PlaceActivity;
@@ -66,6 +67,11 @@ public class MainActivity extends AppCompatActivity {
     @Nullable @OnClick(R.id.IVVivarium)
     public void actionToVivarium(View view){
         changeActivity(this, VivariumActivity.class, null, false);
+    }
+
+    @Nullable @OnClick(R.id.IVQrCode)
+    public void actionQrCode(View view){
+        changeActivity(this, BarcodeActivity.class, null, false);
     }
 
     @Override

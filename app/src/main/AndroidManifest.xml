@@ -2,9 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moizest89.jbplandelalaguna">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
-
 
     <application
         android:allowBackup="true"
@@ -45,6 +43,10 @@
         <activity
             android:name=".UI.Vivarium.VivariumActivity"
             android:label="@string/title_activity_vivarium"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.BarcodeView.BarcodeActivity"
+            android:label="@string/title_activity_barcode"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

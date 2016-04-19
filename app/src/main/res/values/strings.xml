@@ -143,5 +143,6 @@
     <string name="contact_send_email_request">¿Deseas enviarnos un correo personal?</string>
     <string name="title_activity_vivarium">VivariumActivity</string>
     <string name="vivarium_title">Vivero</string>
+    <string name="title_activity_barcode">BarcodeActivity</string>
 
 </resources>
