@@ -235,5 +235,8 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_tips">TipsActivity</string>
+    <string name="tips_title">Tips</string>
+    <string name="title_activity_tips_list">TipsListActivity</string>
 
 </resources>

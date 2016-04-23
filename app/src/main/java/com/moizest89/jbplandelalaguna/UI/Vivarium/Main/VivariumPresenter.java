@@ -7,6 +7,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.moizest89.jbplandelalaguna.Data.Api.MySingleton;
 import com.moizest89.jbplandelalaguna.Data.models.DummyData;
+import com.moizest89.jbplandelalaguna.Util.Util;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -58,7 +59,7 @@ public class VivariumPresenter {
                 JSONObject obj = object.getJSONObject(dummy);
                 data.setId(obj.getInt("id"));
                 data.setName(obj.getString("name"));
-                data.setImage("http://www.compo-expert.com/uploads/pics/triebe_gross_12.jpg");
+                data.setImage(Util.modifyDropboxUrl("https://www.dropbox.com/s/6cxukjct3adacn1/Photo%2011-29-15%2C%203%2058%2039%20PM%20%281%29.jpg?dl=0"));
 
                 mList.add(data);
             }

@@ -65,6 +65,7 @@
             android:layout_weight="0.5"
             android:scaleType="fitCenter"
             android:padding="20dp"
+            android:id="@+id/IVTips"
             android:src="@drawable/tips"/>
         <ImageView
             android:layout_width="match_parent"

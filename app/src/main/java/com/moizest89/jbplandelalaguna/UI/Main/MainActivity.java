@@ -14,6 +14,7 @@ import com.moizest89.jbplandelalaguna.UI.BarcodeView.BarcodeActivity;
 import com.moizest89.jbplandelalaguna.UI.Contact.Main.ContactActivity;
 import com.moizest89.jbplandelalaguna.UI.History.HistoryActivity;
 import com.moizest89.jbplandelalaguna.UI.Place.Main.PlaceActivity;
+import com.moizest89.jbplandelalaguna.UI.Tips.Main.TipsActivity;
 import com.moizest89.jbplandelalaguna.UI.Vivarium.Main.VivariumActivity;
 
 import butterknife.Bind;
@@ -81,6 +82,11 @@ public class MainActivity extends AppCompatActivity {
     @Nullable @OnClick(R.id.IVQrCode)
     public void actionQrCode(View view){
         changeActivity(this, BarcodeActivity.class, null, false);
+    }
+
+    @Nullable @OnClick(R.id.IVTips)
+    public void actionTips(View view){
+        changeActivity(this, TipsActivity.class,null, false);
     }
 
     @Override
