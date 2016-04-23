@@ -42,8 +42,17 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        setToolbar();
+
         ButterKnife.bind(this);
 
+    }
+
+    private void setToolbar(){
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setTitle(getResources().getString(R.string.app_short_name));
+        getSupportActionBar().setSubtitle(getResources().getString(R.string.app_short_sub_name));
 
     }
 
