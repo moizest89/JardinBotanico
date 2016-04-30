@@ -1,5 +1,7 @@
 package com.moizest89.jbplandelalaguna.UI.Tips.Main;
 
+import com.moizest89.jbplandelalaguna.Data.models.Categories;
+import com.moizest89.jbplandelalaguna.Data.models.Category;
 import com.moizest89.jbplandelalaguna.Data.models.TipsCategory;
 
 import java.util.List;
@@ -11,8 +13,9 @@ public interface ITipsView {
 
     void showData();
     void hideData();
-    void setData(List<TipsCategory> tipsCategory);
+    void setData(Categories categories);
     void showLoading();
     void hideLoading();
+    void goToTipList(Category categories);
 
 }

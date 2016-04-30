@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.moizest89.jbplandelalaguna.Data.models.Category;
 import com.moizest89.jbplandelalaguna.Data.models.Formules;
 import com.moizest89.jbplandelalaguna.Data.models.TipsCategory;
 import com.moizest89.jbplandelalaguna.R;
@@ -25,11 +27,11 @@ import butterknife.ButterKnife;
 public class TipsAdapter extends RecyclerView.Adapter<TipsAdapter.Holder> {
 
     private Context context;
-    private List<TipsCategory> mData = new ArrayList<>();
+    private  List<Category> mData = new ArrayList<>();
 
     OnItemClickListener onItemClickListener;
 
-    public TipsAdapter(Context context, List<TipsCategory> mData) {
+    public TipsAdapter(Context context,  List<Category> mData) {
         this.context = context;
         this.mData = mData;
     }
@@ -42,8 +44,15 @@ public class TipsAdapter extends RecyclerView.Adapter<TipsAdapter.Holder> {
 
     @Override
     public void onBindViewHolder(Holder holder, int position) {
-        TipsCategory category = this.mData.get(position);
+        Category category = this.mData.get(position);
         holder.TVTitle.setText(category.getName());
+
+        Glide.with(context)
+                .load(category.getBannerImageUrl())
+//                .placeholder(R.drawable.placeholder) // can also be a drawable
+//                .error(R.drawable.placeholder) // will be displayed if the image cannot be loaded
+                .centerCrop()
+                .into(holder.IVCell);
     }
 
     @Override

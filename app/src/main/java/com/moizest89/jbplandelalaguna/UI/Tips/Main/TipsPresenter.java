@@ -8,6 +8,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.google.gson.Gson;
 import com.moizest89.jbplandelalaguna.Data.Api.MySingleton;
+import com.moizest89.jbplandelalaguna.Data.Api.RestClient;
+import com.moizest89.jbplandelalaguna.Data.models.Categories;
 import com.moizest89.jbplandelalaguna.Data.models.Formules;
 import com.moizest89.jbplandelalaguna.Data.models.TipsCategory;
 import com.moizest89.jbplandelalaguna.Util.Util;
@@ -19,6 +21,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit.Call;
+import retrofit.Callback;
+
 /**
  * Created by @moizest89 in SV on 4/23/16.
  */
@@ -26,47 +31,57 @@ public class TipsPresenter {
 
     private TipsActivity context;
     private final static String TAG = TipsPresenter.class.getSimpleName();
+    private final RestClient.ApiInterface service;
+
 
     public TipsPresenter(TipsActivity context) {
         this.context = context;
-
+        this.service = RestClient.getClient();
     }
 
 
     public void getData(){
-        JsonArrayRequest request = new JsonArrayRequest(MySingleton.API_URL_TIPS_CATEGOIRES,
-                new Response.Listener<JSONArray>() {
-
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        setData(response);
-                    }
-                }, new Response.ErrorListener() {
+        Call<Categories> call = service.getCategoriesTips();
+        call.enqueue(new Callback<Categories>() {
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onResponse(retrofit.Response<Categories> response) {
+                Categories categories = response.body();
+
+                if (categories != null){
+                    setData(categories);
+                }
+
+            }
+            @Override
+            public void onFailure(Throwable t) {
+                Log.e(TAG, t.getMessage());
             }
         });
-
-        MySingleton.getInstance(this.context).addToRequestQueue(request);
     }
 
-    private void setData(JSONArray response){
+    private void setData(Categories categories){
 
-        Log.i(TAG, "response: "+response);
+        Log.i(TAG, "categories: "+categories.getCategories().size());
 
-        Gson gson = new Gson();
-        List<TipsCategory> tipsCategoryList = new ArrayList<>();
-        try {
-            for (int cat = 0; cat < response.length(); cat++) {
-                    TipsCategory tipsCategory = gson.fromJson(String.valueOf(response.get(cat)), TipsCategory.class);
-                    tipsCategoryList.add(tipsCategory);
-            }
+        if(categories.getCategories().size() > 0){
+            this.context.setData(categories);
+        }else{
 
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
+//        Gson gson = new Gson();
+//        List<TipsCategory> tipsCategoryList = new ArrayList<>();
+//        try {
+//            for (int cat = 0; cat < response.length(); cat++) {
+//                    TipsCategory tipsCategory = gson.fromJson(String.valueOf(response.get(cat)), TipsCategory.class);
+//                    tipsCategoryList.add(tipsCategory);
+//            }
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//            Log.e(TAG, e.getMessage());
+//        }
 
-        this.context.setData(tipsCategoryList);
+//        this.context.setData(tipsCategoryList);
         this.context.hideLoading();
         this.context.showData();
 

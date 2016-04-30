@@ -1,5 +1,6 @@
 package com.moizest89.jbplandelalaguna.UI.Tips.Main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,9 +12,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
+import com.moizest89.jbplandelalaguna.Data.models.Categories;
+import com.moizest89.jbplandelalaguna.Data.models.Category;
 import com.moizest89.jbplandelalaguna.Data.models.Formules;
 import com.moizest89.jbplandelalaguna.Data.models.TipsCategory;
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.UI.Tips.List.TipsListActivity;
 import com.moizest89.jbplandelalaguna.Util.MarginDecoration;
 import com.moizest89.jbplandelalaguna.Util.OnItemClickListener;
 import com.moizest89.jbplandelalaguna.Util.Util;
@@ -83,19 +87,23 @@ public class TipsActivity extends AppCompatActivity implements ITipsView{
     }
 
     @Override
-    public void setData(List<TipsCategory> tipsCategory) {
-        TipsAdapter adapter = new TipsAdapter(this, tipsCategory);
+    public void setData(final Categories categories) {
+        TipsAdapter adapter = new TipsAdapter(this, categories.getCategories());
         this.RVList.setAdapter(adapter);
 
         OnItemClickListener onItemClickListener = new OnItemClickListener() {
             @Override
             public void onItemClickListener(View view, Integer position) {
-                Toast.makeText(TipsActivity.this, "Position: "+position, Toast.LENGTH_LONG).show();
+
+                goToTipList(categories.getCategories().get(position));
+
             }
         };
         adapter.setOnItemClickListener(onItemClickListener);
 
     }
+
+
 
 
     @Override
@@ -106,5 +114,14 @@ public class TipsActivity extends AppCompatActivity implements ITipsView{
     @Override
     public void hideLoading() {
         this.AVLoader.animate().alpha(0).setDuration(Util.ANIMATION_DURATION);
+    }
+
+    @Override
+    public void goToTipList(Category category) {
+
+        Intent intent = new Intent(this, TipsListActivity.class);
+        intent.putExtra(Util.INTENT_DATA_SEND, category);
+        startActivity(intent);
+
     }
 }

@@ -22,7 +22,7 @@ public class MySingleton {
 
     //Api Endpoints
 
-    public final static String API_URL = "http://03c3af5d.ngrok.io";
+    public final static String API_URL = "https://jardin-botanico.herokuapp.com";
     public final static String API_URL_SHOWS_LIVE = API_URL+ "/shows/live";
     public final static String API_URL_CHANNELS = API_URL+ "/channels";
     public final static String API_URL_TIPS_CATEGOIRES = API_URL+ "/categories";
