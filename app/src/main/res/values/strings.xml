@@ -242,6 +242,26 @@
     <string name="tips_title">Tips</string>
     <string name="title_activity_tips_list">TipsListActivity</string>
 
+    <string name="vivarium_header_info">
+        Venta de plantas ornamentales, medicinales, hierbas aromáticas,
+        flores de estación y frutales. Sustratos: tierra preparada,
+        tierra negra, cascajo blanco y compost. Fertilizantes y
+        una amplia variedad de macetas de barro, plástico y accesorios de jardinería.
 
+        \n
+        \n
+
+        Ubicado en Urbanización industrial
+        Plan de La Laguna Antiguo Cuscatlán,
+        contiguo al parque, con horario:
+        Lunes a Domingo, de 8:00 a.m. a 6:00 p.m.
+        y Puma Chiltiupán, frente a Centro Comercial Merliot,
+        Santa Tecla con horario de 8:30 a.m. a 5:30 p.m. de Lunes a Domingo.
+
+        \n
+        Teléfono. +503 2243 8125 \n
+        Email: jardinbotanico@jardinbotanico.org.sv
+
+    </string>
 
 </resources>

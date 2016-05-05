@@ -14,8 +14,8 @@ import com.moizest89.jbplandelalaguna.R;
 public class ImageViewWithRatio extends ImageView{
 
 
-    public float x;
-    public float y;
+    public float x = 1.0f;
+    public float y = 1.0f;
 
 
     public float getX() {

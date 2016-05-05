@@ -1,6 +1,7 @@
 package com.moizest89.jbplandelalaguna.UI.Vivarium.Main;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -15,6 +16,7 @@ import com.moizest89.jbplandelalaguna.R;
 import com.moizest89.jbplandelalaguna.UI.BarcodeView.BarcodeActivity;
 import com.moizest89.jbplandelalaguna.UI.Vivarium.Details.VivariumDetailsActivity;
 import com.moizest89.jbplandelalaguna.Util.DummyAdapter;
+import com.moizest89.jbplandelalaguna.Util.ImageViewWithRatio;
 import com.moizest89.jbplandelalaguna.Util.MarginDecoration;
 import com.moizest89.jbplandelalaguna.Util.OnItemClickListener;
 import com.moizest89.jbplandelalaguna.Util.Util;
@@ -30,11 +32,15 @@ import static com.moizest89.jbplandelalaguna.Util.Util.changeActivity;
 public class VivariumActivity extends AppCompatActivity implements IVivariumActivity{
 
 
-    @Bind(R.id.toolbar) Toolbar toolbar;
-    @Bind(R.id.AVLoader)
-    AVLoadingIndicatorView AVLoader;
-    @Bind(R.id.SWRefresh) SwipeRefreshLayout SWRefresh;
-    @Bind(R.id.RVList) RecyclerView RVList;
+    @Nullable @Bind(R.id.toolbar) Toolbar toolbar;
+    @Nullable @Bind(R.id.AVLoader) AVLoadingIndicatorView AVLoader;
+    @Nullable @Bind(R.id.SWRefresh) SwipeRefreshLayout SWRefresh;
+    @Nullable @Bind(R.id.RVList) RecyclerView RVList;
+
+    @Nullable @Bind(R.id.IVImage_1)
+    ImageViewWithRatio IVImage_1;
+    @Nullable @Bind(R.id.IVImage_2)
+    ImageViewWithRatio IVImage_2;
 
 
     private VivariumPresenter mPresenter;
@@ -49,13 +55,20 @@ public class VivariumActivity extends AppCompatActivity implements IVivariumActi
         setSupportActionBar(toolbar);
 
         setToolbar();
-        RVList.addItemDecoration(new MarginDecoration(1, this));
-        RVList.setHasFixedSize(true);
-        final GridLayoutManager manager = new GridLayoutManager(this, 2);
-        RVList.setLayoutManager(manager);
+//        RVList.addItemDecoration(new MarginDecoration(1, this));
+//        RVList.setHasFixedSize(true);
+//        final GridLayoutManager manager = new GridLayoutManager(this, 2);
+//        RVList.setLayoutManager(manager);
 
         this.mPresenter = new VivariumPresenter(this);
-        mPresenter.getData();
+//        mPresenter.getData();
+
+
+        this.IVImage_1.setX(1.0f);
+        this.IVImage_1.setY(1.0f);
+
+        this.IVImage_2.setX(1.0f);
+        this.IVImage_2.setY(1.0f);
 
 
     }
