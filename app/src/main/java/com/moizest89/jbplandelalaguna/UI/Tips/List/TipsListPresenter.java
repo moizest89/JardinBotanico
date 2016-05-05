@@ -1,11 +1,19 @@
 package com.moizest89.jbplandelalaguna.UI.Tips.List;
 
+import android.util.Log;
+
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.moizest89.jbplandelalaguna.Data.Api.MySingleton;
+import com.moizest89.jbplandelalaguna.Data.Api.RestClient;
+import com.moizest89.jbplandelalaguna.Data.models.Tip;
+import com.moizest89.jbplandelalaguna.Data.models.Tips;
 
 import org.json.JSONArray;
+
+import retrofit.Call;
+import retrofit.Callback;
 
 /**
  * Created by @moizest89 in SV on 4/23/16.
@@ -13,9 +21,12 @@ import org.json.JSONArray;
 public class TipsListPresenter {
 
     private TipsListActivity context;
+    private final RestClient.ApiInterface service;
+    private final String TAG = TipsListPresenter.class.getSimpleName();
 
     public TipsListPresenter(TipsListActivity context) {
         this.context = context;
+        this.service = RestClient.getClient();
 
     }
 
@@ -23,30 +34,39 @@ public class TipsListPresenter {
     public void getData(Integer id){
         //categories/3/tips
 
-        String mUrlConnection = MySingleton.API_URL_TIPS_CATEGOIRES+"/"+id.toString()+"/tips";
+//        String mUrlConnection = MySingleton.API_URL_TIPS_CATEGOIRES+"/"+id.toString()+"/tips";
 
-        JsonArrayRequest request = new JsonArrayRequest(mUrlConnection,
-                new Response.Listener<JSONArray>() {
-
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        setData(response);
-                    }
-                }, new Response.ErrorListener() {
+        Call<Tips> call = this.service.getTipsForCategory(id);
+        call.enqueue(new Callback<Tips>() {
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onResponse(retrofit.Response<Tips> response) {
+                Tips tips = response.body();
+                if(tips !=null){
+                    setData(tips);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+
             }
         });
 
-        MySingleton.getInstance(this.context).addToRequestQueue(request);
 
     }
 
-    private void setData(JSONArray response){
+    private void setData(Tips tips){
 
+        if(tips.getTips().size() > 0){
+            this.context.setData(tips.getTips());
+        }else{
+
+        }
 
 
         //set data
+
         this.context.hideLoading();
         this.context.showData();
     }

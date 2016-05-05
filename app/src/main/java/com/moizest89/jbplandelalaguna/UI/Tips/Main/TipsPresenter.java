@@ -41,6 +41,7 @@ public class TipsPresenter {
 
 
     public void getData(){
+
         Call<Categories> call = service.getCategoriesTips();
         call.enqueue(new Callback<Categories>() {
             @Override
@@ -57,6 +58,7 @@ public class TipsPresenter {
                 Log.e(TAG, t.getMessage());
             }
         });
+
     }
 
     private void setData(Categories categories){

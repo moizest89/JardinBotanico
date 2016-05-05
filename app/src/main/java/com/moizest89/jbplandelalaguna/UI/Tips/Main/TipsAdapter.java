@@ -12,6 +12,7 @@ import com.moizest89.jbplandelalaguna.Data.models.Category;
 import com.moizest89.jbplandelalaguna.Data.models.Formules;
 import com.moizest89.jbplandelalaguna.Data.models.TipsCategory;
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.Util.Fonts;
 import com.moizest89.jbplandelalaguna.Util.ImageViewWithRatio;
 import com.moizest89.jbplandelalaguna.Util.OnItemClickListener;
 
@@ -46,6 +47,7 @@ public class TipsAdapter extends RecyclerView.Adapter<TipsAdapter.Holder> {
     public void onBindViewHolder(Holder holder, int position) {
         Category category = this.mData.get(position);
         holder.TVTitle.setText(category.getName());
+        holder.TVTitle.setTypeface(new Fonts().RobotoCondensed_Regular(this.context));
 
         Glide.with(context)
                 .load(category.getBannerImageUrl())

@@ -18,6 +18,16 @@
         app:indicator_color="@color/colorPrimaryDark"
         />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TVSetMessage"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:textColor="#FFFFFF"
+        android:alpha="0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+
     <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

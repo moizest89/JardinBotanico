@@ -2,6 +2,7 @@ package com.moizest89.jbplandelalaguna.Data.Api;
 
 
 import com.moizest89.jbplandelalaguna.Data.models.Categories;
+import com.moizest89.jbplandelalaguna.Data.models.Tips;
 import com.squareup.okhttp.Interceptor;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Response;
@@ -12,7 +13,9 @@ import java.io.IOException;
 import retrofit.Call;
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
+import retrofit.http.Field;
 import retrofit.http.GET;
+import retrofit.http.Path;
 
 
 /**
@@ -54,6 +57,9 @@ public class RestClient {
 
         @GET("/categories")
         Call<Categories> getCategoriesTips();
+
+        @GET("/categories/{id}/tips")
+        Call<Tips> getTipsForCategory(@Path("id") Integer id);
 
     }
 

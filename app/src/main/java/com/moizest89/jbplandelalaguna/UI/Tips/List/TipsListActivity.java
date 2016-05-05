@@ -2,6 +2,7 @@ package com.moizest89.jbplandelalaguna.UI.Tips.List;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -11,11 +12,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.moizest89.jbplandelalaguna.Data.models.Category;
+import com.moizest89.jbplandelalaguna.Data.models.Tip;
+import com.moizest89.jbplandelalaguna.Data.models.Tips;
 import com.moizest89.jbplandelalaguna.Data.models.TipsCategory;
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.UI.Tips.Main.TipsAdapter;
 import com.moizest89.jbplandelalaguna.UI.Tips.Main.TipsPresenter;
+import com.moizest89.jbplandelalaguna.Util.Fonts;
 import com.moizest89.jbplandelalaguna.Util.MarginDecoration;
 import com.moizest89.jbplandelalaguna.Util.Util;
 import com.wang.avi.AVLoadingIndicatorView;
@@ -36,6 +42,9 @@ public class TipsListActivity extends AppCompatActivity implements  ITipsListVie
     @Bind(R.id.RVList)
     RecyclerView RVList;
 
+    @Bind(R.id.TVSetMessage)
+    TextView TVSetMessage;
+
     private Category category;
     private TipsListPresenter mPresenter;
 
@@ -55,13 +64,23 @@ public class TipsListActivity extends AppCompatActivity implements  ITipsListVie
 
         setToolbar();
 
-        RVList.addItemDecoration(new MarginDecoration(1, this));
-        RVList.setHasFixedSize(true);
+        this.RVList.addItemDecoration(new MarginDecoration(1, this));
+        this.RVList.setHasFixedSize(true);
         final LinearLayoutManager manager = new LinearLayoutManager(this);
-        RVList.setLayoutManager(manager);
+        this.RVList.setLayoutManager(manager);
+
+        this.TVSetMessage.setTypeface(new Fonts().RobotoCondensed_Regular(this));
 
         this.mPresenter = new TipsListPresenter(this);
         this.mPresenter.getData(this.category.getId());
+
+        this.SWRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                TVSetMessage.setAlpha(0);
+                showLoading();
+            }
+        });
 
     }
 
@@ -90,9 +109,17 @@ public class TipsListActivity extends AppCompatActivity implements  ITipsListVie
     }
 
     @Override
-    public void setData(List<TipsCategory> tipsCategory) {
+    public void setData(List<Tip> tips) {
 
+        TipsListAdapter adapter = new TipsListAdapter(this, tips);
+        this.RVList.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
+        if(this.SWRefresh.isRefreshing()){
+            this.SWRefresh.setRefreshing(false);
+        }
     }
+
 
     @Override
     public void showLoading() {
@@ -102,6 +129,22 @@ public class TipsListActivity extends AppCompatActivity implements  ITipsListVie
     @Override
     public void hideLoading() {
         this.AVLoader.animate().alpha(0).setDuration(Util.ANIMATION_DURATION);
+    }
+
+    @Override
+    public void setMessageDataError() {
+        String mMessage = this.getResources().getString(R.string.data_error);
+        this.TVSetMessage.setText("");
+        this.TVSetMessage.setText(mMessage);
+        this.TVSetMessage.animate().alpha(1).setDuration(Util.ANIMATION_DURATION);
+    }
+
+    @Override
+    public void setMessageDataEmpty() {
+        String mMessage = this.getResources().getString(R.string.data_empty);
+        this.TVSetMessage.setText("");
+        this.TVSetMessage.setText(mMessage);
+        this.TVSetMessage.animate().alpha(1).setDuration(Util.ANIMATION_DURATION);
     }
 
 }

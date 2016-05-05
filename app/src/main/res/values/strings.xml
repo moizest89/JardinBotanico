@@ -5,6 +5,9 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_main2">Main2Activity</string>
 
+    <string name="data_error">Ocurrio un error, intentalo nuevamente.</string>
+    <string name="data_empty">No existen elementos disponibles</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_history">HistoryActivity</string>
@@ -238,5 +241,7 @@
     <string name="title_activity_tips">TipsActivity</string>
     <string name="tips_title">Tips</string>
     <string name="title_activity_tips_list">TipsListActivity</string>
+
+
 
 </resources>
