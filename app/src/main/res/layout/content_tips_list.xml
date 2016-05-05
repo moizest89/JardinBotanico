@@ -24,9 +24,10 @@
         android:id="@+id/TVSetMessage"
         android:layout_gravity="center"
         android:padding="20dp"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="center"
         android:alpha="0"
-        android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+        android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"/>
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"

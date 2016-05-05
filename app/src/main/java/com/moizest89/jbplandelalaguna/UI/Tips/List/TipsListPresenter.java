@@ -40,16 +40,34 @@ public class TipsListPresenter {
         call.enqueue(new Callback<Tips>() {
             @Override
             public void onResponse(retrofit.Response<Tips> response) {
-                Tips tips = response.body();
-                if(tips !=null){
-                    setData(tips);
+
+                Log.e(TAG, "onResponse()");
+                Log.e(TAG, "onResponse() response.code() "+response.code());
+
+                switch (response.code()){
+                    case 500:
+                        context.hideLoading();
+                        context.setMessageDataError();
+                        break;
+                    case 400:
+
+                        break;
+                    default:
+                        Tips tips = response.body();
+                        if(tips !=null){
+                            setData(tips);
+                        }
+                        break;
                 }
+
 
             }
 
             @Override
             public void onFailure(Throwable t) {
-
+                Log.e(TAG, t.getMessage());
+                context.hideLoading();
+                context.setMessageDataError();
             }
         });
 
@@ -61,7 +79,7 @@ public class TipsListPresenter {
         if(tips.getTips().size() > 0){
             this.context.setData(tips.getTips());
         }else{
-
+            this.context.setMessageDataError();
         }
 
 
