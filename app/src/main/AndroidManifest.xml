@@ -3,6 +3,8 @@
     package="com.moizest89.jbplandelalaguna">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -49,7 +51,8 @@
             android:name=".UI.BarcodeView.BarcodeActivity"
             android:label="@string/title_activity_barcode"
             android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".UI.Vivarium.Details.VivariumDetailsActivity"
             android:label="@string/title_activity_vivarium"
