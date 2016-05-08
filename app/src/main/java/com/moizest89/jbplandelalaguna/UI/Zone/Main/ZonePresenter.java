@@ -1,4 +1,4 @@
-package com.moizest89.jbplandelalaguna.UI.Place.Main;
+package com.moizest89.jbplandelalaguna.UI.Zone.Main;
 
 
 import com.moizest89.jbplandelalaguna.R;
@@ -9,13 +9,13 @@ import java.util.List;
 /**
  * Created by @moizest89 in SV on 4/11/16.
  */
-public class PlacePresenter {
+public class ZonePresenter {
 
-    private PlaceActivity context;
+    private ZoneActivity context;
     private String mSpinnerHeader;
     private String mSpinnerZoneLabel;
 
-    public PlacePresenter(PlaceActivity context) {
+    public ZonePresenter(ZoneActivity context) {
         this.context = context;
         this.mSpinnerHeader = this.context.getResources().getString(R.string.place_spinner_label_select_item);
         this.mSpinnerZoneLabel = this.context.getResources().getString(R.string.place_spinner_label_zone);

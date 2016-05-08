@@ -1,4 +1,4 @@
-package com.moizest89.jbplandelalaguna.UI.Place.Main;
+package com.moizest89.jbplandelalaguna.UI.Zone.Main;
 
 import android.content.Context;
 import android.view.LayoutInflater;

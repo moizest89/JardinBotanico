@@ -18,6 +18,9 @@ public class Util {
     public final static Integer ANIMATION_DURATION = 1200;
 
     public final static String INTENT_DATA_SEND = "data";
+    public final static String INTENT_ZONE_ID = "zone_id";
+
+
 
     public static void changeActivity(Context context, Class<?> target, Bundle options, boolean finish) {
         Intent i = new Intent(context, target);

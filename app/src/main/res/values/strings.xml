@@ -263,5 +263,6 @@
         Email: jardinbotanico@jardinbotanico.org.sv
 
     </string>
+    <string name="title_activity_zone_details">ZoneDetailsActivity</string>
 
 </resources>

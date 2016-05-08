@@ -1,5 +1,6 @@
-package com.moizest89.jbplandelalaguna.UI.Place.Main;
+package com.moizest89.jbplandelalaguna.UI.Zone.Main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -10,13 +11,15 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.UI.Zone.Details.ZoneDetailsActivity;
+import com.moizest89.jbplandelalaguna.Util.Util;
 
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class PlaceActivity extends AppCompatActivity implements IPlaceActivity,
+public class ZoneActivity extends AppCompatActivity implements IZoneActivity,
         Spinner.OnItemSelectedListener{
 
     @Bind(R.id.toolbar_spinner)
@@ -25,8 +28,10 @@ public class PlaceActivity extends AppCompatActivity implements IPlaceActivity,
     Toolbar toolbar;
 
 
-    private PlacePresenter mPresenter;
-    private final static String TAG = PlaceActivity.class.getSimpleName();
+    private ZonePresenter mPresenter;
+    private final static String TAG = ZoneActivity.class.getSimpleName();
+
+    private final static Integer INTENT_ZONE_DETAILS = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +45,7 @@ public class PlaceActivity extends AppCompatActivity implements IPlaceActivity,
 
         setToolbar();
 
-        this.mPresenter = new PlacePresenter(this);
+        this.mPresenter = new ZonePresenter(this);
         this.mPresenter.loadDataForSpinner();
 
     }
@@ -74,8 +79,12 @@ public class PlaceActivity extends AppCompatActivity implements IPlaceActivity,
             Log.e(TAG, "onItemSelected");
             Log.e(TAG, "position: " + position);
             Log.e(TAG, "long: " + id);
-        }
 
+            Intent intent = new Intent(ZoneActivity.this, ZoneDetailsActivity.class);
+            intent.putExtra(Util.INTENT_ZONE_ID, position);
+            startActivityForResult(intent,INTENT_ZONE_DETAILS);
+
+        }
         parent.setSelection(0);
 
     }
@@ -88,8 +97,9 @@ public class PlaceActivity extends AppCompatActivity implements IPlaceActivity,
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_qr, menu);
         return true;
     }
+
+
 }

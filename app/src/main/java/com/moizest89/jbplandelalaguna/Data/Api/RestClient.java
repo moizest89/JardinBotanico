@@ -3,10 +3,14 @@ package com.moizest89.jbplandelalaguna.Data.Api;
 
 import com.moizest89.jbplandelalaguna.Data.models.Categories;
 import com.moizest89.jbplandelalaguna.Data.models.Tips;
+import com.moizest89.jbplandelalaguna.Data.models.Zone;
 import com.squareup.okhttp.Interceptor;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Response;
 
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -16,6 +20,8 @@ import retrofit.Retrofit;
 import retrofit.http.Field;
 import retrofit.http.GET;
 import retrofit.http.Path;
+import retrofit.http.Query;
+import retrofit.http.Url;
 
 
 /**
@@ -25,6 +31,8 @@ public class RestClient {
 
     private static ApiInterface apiInterface;
     private static String baseUrl = "https://jardin-botanico.herokuapp.com" ;
+
+    public final static String URL_ZONE_FAMILIES = baseUrl + "/zone_families?position=";
 
     public static ApiInterface getClient(){
         if(apiInterface == null){
@@ -60,6 +68,9 @@ public class RestClient {
 
         @GET("/categories/{id}/tips")
         Call<Tips> getTipsForCategory(@Path("id") Integer id);
+
+        @GET
+        Call<JSONObject> getZoneByPosition(@Url String url);
 
     }
 

@@ -13,7 +13,7 @@ import com.moizest89.jbplandelalaguna.R;
 import com.moizest89.jbplandelalaguna.UI.BarcodeView.BarcodeActivity;
 import com.moizest89.jbplandelalaguna.UI.Contact.Main.ContactActivity;
 import com.moizest89.jbplandelalaguna.UI.History.HistoryActivity;
-import com.moizest89.jbplandelalaguna.UI.Place.Main.PlaceActivity;
+import com.moizest89.jbplandelalaguna.UI.Zone.Main.ZoneActivity;
 import com.moizest89.jbplandelalaguna.UI.Tips.Main.TipsActivity;
 import com.moizest89.jbplandelalaguna.UI.Vivarium.Main.VivariumActivity;
 
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Nullable @OnClick(R.id.IVActionPlace)
     public void actionToPlace(View view){
-        changeActivity(this, PlaceActivity.class, null, false);
+        changeActivity(this, ZoneActivity.class, null, false);
     }
 
 
