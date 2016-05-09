@@ -264,5 +264,6 @@
 
     </string>
     <string name="title_activity_zone_details">ZoneDetailsActivity</string>
+    <string name="title_activity_family_description">FamilyDescriptionActivity</string>
 
 </resources>

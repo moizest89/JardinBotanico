@@ -1,7 +1,9 @@
 package com.moizest89.jbplandelalaguna.Data.Api;
 
 
+import com.google.gson.JsonArray;
 import com.moizest89.jbplandelalaguna.Data.models.Categories;
+import com.moizest89.jbplandelalaguna.Data.models.Families;
 import com.moizest89.jbplandelalaguna.Data.models.Tips;
 import com.moizest89.jbplandelalaguna.Data.models.Zone;
 import com.squareup.okhttp.Interceptor;
@@ -30,7 +32,7 @@ import retrofit.http.Url;
 public class RestClient {
 
     private static ApiInterface apiInterface;
-    private static String baseUrl = "https://jardin-botanico.herokuapp.com" ;
+    public static String baseUrl = "https://jardin-botanico.herokuapp.com" ;
 
     public final static String URL_ZONE_FAMILIES = baseUrl + "/zone_families?position=";
 
@@ -71,6 +73,9 @@ public class RestClient {
 
         @GET
         Call<JSONObject> getZoneByPosition(@Url String url);
+
+        @GET
+        Call<Families> getFamilyDetails(@Url String url);
 
     }
 

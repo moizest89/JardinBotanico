@@ -81,6 +81,12 @@
         <activity
             android:name=".UI.Zone.Details.ZoneDetailsActivity"
             android:label="@string/title_activity_zone_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Family.Details.FamilyDescriptionActivity"
+            android:label="@string/title_activity_family_description"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

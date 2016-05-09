@@ -5,9 +5,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.widget.Toast;
 
 
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.UI.Family.Details.FamilyDescriptionActivity;
+import com.moizest89.jbplandelalaguna.UI.Zone.Details.ZoneDetailsActivity;
+import com.moizest89.jbplandelalaguna.Util.Util;
 
 import me.sudar.zxingorient.Barcode;
 import me.sudar.zxingorient.ZxingOrient;
@@ -85,11 +89,40 @@ public class BarcodeActivity extends AppCompatActivity{
 
                 Log.e(TAG, "FORMAT: " + scanFormat);
                 Log.e(TAG, "CONTENT: " + scanContent);
+
+                redirectSpecificDetails(scanContent);
             }
         }else{
             finish();
         }
 
+    }
+
+
+
+    private void redirectSpecificDetails(String mContent){
+        //family_info
+
+        boolean family = mContent.matches("/family_info(?i).*");
+        boolean zone = mContent.matches("/zone_families(?i).*");
+
+        if(family){
+            Log.e(TAG, "family");
+            Intent intent = new Intent(this, FamilyDescriptionActivity.class);
+            intent.putExtra(Util.INTENT_DATA_SEND, mContent);
+            startActivity(intent);
+        }else{
+            if(zone){
+                Log.e(TAG, "zone");
+                Intent intent = new Intent(this, ZoneDetailsActivity.class);
+                intent.putExtra(Util.INTENT_DATA_SEND, mContent);
+                intent.putExtra(Util.INTENT_DATA_ORIGIN, Util.INTENT_DATA_ORIGIN_QR_CODE);
+                startActivity(intent);
+            }else{
+                Toast.makeText(BarcodeActivity.this, "El codigo QR no pertenece al Jardin Botanico", Toast.LENGTH_SHORT).show();
+            }
+        }
+        finish();
     }
 
 }
