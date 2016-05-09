@@ -2,6 +2,7 @@ package com.moizest89.jbplandelalaguna.UI.Family.Details;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.moizest89.jbplandelalaguna.Data.models.Family;
 import com.moizest89.jbplandelalaguna.Data.models.FamilyImage;
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.Util.Fonts;
 import com.moizest89.jbplandelalaguna.Util.Util;
 
 import org.w3c.dom.Text;
@@ -34,6 +36,10 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
     @Bind(R.id.ImageDetails)
     ImageView ImageDetails;
 
+    @Bind(R.id.collapsing_toolbar)
+    CollapsingToolbarLayout collapsing_toolbar;
+
+
 
     private FamilyDescriptionPresenter mPresenter;
     private String mData = "";
@@ -48,8 +54,9 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
 
         ButterKnife.bind(this);
 
-//        setToolbar();
+        setToolbar();
 
+        this.TVTDescription.setTypeface(new Fonts().RobotoCondensed_Regular(this));
 
         Intent intent = getIntent();
         if(intent != null){
@@ -60,11 +67,10 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
 
     }
 
-    private void setToolbar(String name){
+    private void setToolbar(){
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setTitle(name);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,11 +92,12 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
     @Override
     public void setData(Family family) {
 
-        if(family !=null) {
+        if(family != null) {
             this.TVTDescription.setText(Html.fromHtml(family.getDescription()));
             Log.e(TAG, "family.getName(): " + family.getName());
-            
-            setToolbar(family.getName());
+
+            this.collapsing_toolbar.setTitle(family.getName());
+
             List<FamilyImage> images = family.getFamilyImages();
 
             if(images.size() > 0) {

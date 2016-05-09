@@ -1,7 +1,11 @@
 package com.moizest89.jbplandelalaguna.UI.BarcodeView;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -26,24 +30,13 @@ public class BarcodeActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barcode);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
 
         scanNow();
+
     }
 
 
     public void scanNow(){
-//        IntentIntegrator integrator = new IntentIntegrator(this);
-//        integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
-//        integrator.setPrompt("Escanea el codigo QR");
-//        integrator.setCameraId(0);  // Use a specific camera of the device
-//        integrator.setBeepEnabled(true);
-//        integrator.setBarcodeImageEnabled(false);
-//        integrator.setOrientationLocked(false);
-//
-//        integrator.initiateScan();
 
         new ZxingOrient(BarcodeActivity.this)
                 .showInfoBox(false) // Doesn't display the info box
