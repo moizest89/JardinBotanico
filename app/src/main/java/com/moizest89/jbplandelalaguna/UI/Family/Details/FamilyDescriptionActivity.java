@@ -1,5 +1,6 @@
 package com.moizest89.jbplandelalaguna.UI.Family.Details;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -10,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,6 +21,7 @@ import com.moizest89.jbplandelalaguna.Data.models.FamilyImage;
 import com.moizest89.jbplandelalaguna.R;
 import com.moizest89.jbplandelalaguna.Util.Fonts;
 import com.moizest89.jbplandelalaguna.Util.Util;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import org.w3c.dom.Text;
 
@@ -33,6 +36,8 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
     TextView TVTDescription;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
+
+
     @Bind(R.id.ImageDetails)
     ImageView ImageDetails;
 
@@ -41,8 +46,11 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
 
 
 
+
+
     private FamilyDescriptionPresenter mPresenter;
     private String mData = "";
+    private ProgressDialog mSignUpDialog;
 
     private final static String TAG = FamilyDescriptionActivity.class.getSimpleName();
 
@@ -55,7 +63,7 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
         ButterKnife.bind(this);
 
         setToolbar();
-
+        setDialog();
         this.TVTDescription.setTypeface(new Fonts().RobotoCondensed_Regular(this));
 
         Intent intent = getIntent();
@@ -67,10 +75,13 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
 
     }
 
-    private void setToolbar(){
+    private void setToolbar() {
+
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle("");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,15 +90,39 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
         });
     }
 
+
+    @Override
+    public void showData() {
+
+    }
+
     @Override
     public void showLoader() {
-
+        if (mSignUpDialog != null) {
+            mSignUpDialog.show();
+        }
     }
 
     @Override
-    public void hiderLoader() {
+    public void hideLoader() {
+        if(mSignUpDialog.isShowing()){
+            mSignUpDialog.dismiss();
+        }
+    }
+
+    @Override
+    public void setMessage(String mMessage) {
 
     }
+
+    private void setDialog(){
+        if (mSignUpDialog == null) {
+            mSignUpDialog = new ProgressDialog(this);
+            mSignUpDialog.setMessage(this.getString(R.string.global_wait_load));
+            mSignUpDialog.setCancelable(false);
+        }
+    }
+
 
     @Override
     public void setData(Family family) {

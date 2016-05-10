@@ -265,5 +265,6 @@
     </string>
     <string name="title_activity_zone_details">ZoneDetailsActivity</string>
     <string name="title_activity_family_description">FamilyDescriptionActivity</string>
+    <string name="global_wait_load">Espere por favor...</string>
 
 </resources>

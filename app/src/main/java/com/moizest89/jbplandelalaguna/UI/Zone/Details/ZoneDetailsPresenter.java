@@ -42,12 +42,24 @@ public class ZoneDetailsPresenter {
     }
 
 
+    public void getDataByUrl(String mString){
+
+        String mUrl = RestClient.baseUrl + mString;
+        getGata(mUrl);
+
+    }
+
     public void getDataByPosition(Integer position){
 
         Log.e(TAG, "URL " + RestClient.URL_ZONE_FAMILIES + position);
 
         String mUrl = RestClient.URL_ZONE_FAMILIES + position.toString();
 
+        getGata(mUrl);
+
+    }
+
+    private void getGata(String mUrl){
         JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET,mUrl,null,
                 new com.android.volley.Response.Listener<JSONObject>() {
                     @Override
@@ -59,12 +71,11 @@ public class ZoneDetailsPresenter {
                 new com.android.volley.Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                    VolleyLog.d(TAG, "Error: " + error.getMessage());
+                        VolleyLog.d(TAG, "Error: " + error.getMessage());
 
                     }
                 });
         MySingleton.getInstance(this.context).addToRequestQueue(req);
-
     }
 
     private void setData(JSONObject object){

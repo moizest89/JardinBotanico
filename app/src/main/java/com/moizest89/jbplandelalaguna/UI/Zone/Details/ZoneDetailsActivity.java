@@ -34,6 +34,9 @@ public class ZoneDetailsActivity extends AppCompatActivity implements IZoneView{
     private final static String TAG = ZoneDetailsActivity.class.getSimpleName();
     private ZoneDetailsAdapter mAdapter;
 
+    private String mOrigin = "";
+    private String mUrl = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,15 +48,24 @@ public class ZoneDetailsActivity extends AppCompatActivity implements IZoneView{
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        this.mPresenter = new ZoneDetailsPresenter(this);
 
         Intent intent = getIntent();
         if(intent != null){
-            this.mPosition = intent.getIntExtra(Util.INTENT_ZONE_ID, 0);
+            this.mOrigin = intent.getStringExtra(Util.INTENT_DATA_ORIGIN);
+
+            if(this.mOrigin.equals(Util.INTENT_DATA_ORIGIN_QR_CODE)){
+
+                this.mUrl = intent.getStringExtra(Util.INTENT_DATA_SEND);
+                this.mPresenter.getDataByUrl(this.mUrl);
+
+            }else if(this.mOrigin.equals(Util.INTENT_DATA_ORIGIN_PLACE)){
+
+                this.mPosition = intent.getIntExtra(Util.INTENT_ZONE_ID, 0);
+                this.mPresenter.getDataByPosition(this.mPosition);
+
+            }
         }
-
-
-        this.mPresenter = new ZoneDetailsPresenter(this);
-        this.mPresenter.getDataByPosition(this.mPosition);
 
     }
 

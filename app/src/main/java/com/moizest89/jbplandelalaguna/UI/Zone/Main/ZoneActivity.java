@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.UI.BarcodeView.BarcodeActivity;
 import com.moizest89.jbplandelalaguna.UI.Zone.Details.ZoneDetailsActivity;
 import com.moizest89.jbplandelalaguna.Util.Util;
 
@@ -99,6 +101,23 @@ public class ZoneActivity extends AppCompatActivity implements IZoneActivity,
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_qr, menu);
         return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.menu_action_qr_code) {
+
+            Intent intent = new Intent(this, BarcodeActivity.class);
+            startActivity(intent);
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 

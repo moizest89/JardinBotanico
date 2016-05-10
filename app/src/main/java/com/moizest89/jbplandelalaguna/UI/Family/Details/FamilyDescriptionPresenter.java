@@ -32,6 +32,8 @@ public class FamilyDescriptionPresenter {
 
     public void getData(String mUrl){
 
+        this.context.showLoader();
+
         String url = RestClient.baseUrl + mUrl;
 
         Log.e(TAG, "url: "+url);
@@ -56,6 +58,13 @@ public class FamilyDescriptionPresenter {
 
     private void setData(Families families){
         List<Family> familyList = families.getFamilies();
-        this.context.setData(familyList.get(0));
+
+        if(familyList.size() > 0) {
+            this.context.setData(familyList.get(0));
+            this.context.hideLoader();
+        }else{
+            this.context.setMessage("Actualmente, este contenido no esta disponible");
+        }
+
     }
 }

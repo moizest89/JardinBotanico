@@ -7,8 +7,11 @@ import com.moizest89.jbplandelalaguna.Data.models.Family;
  */
 public interface IFamilyDescriptionView {
 
+    void showData();
     void showLoader();
-    void hiderLoader();
+    void hideLoader();
+
+    void setMessage(String mMessage);
     void setData(Family family);
 
 }

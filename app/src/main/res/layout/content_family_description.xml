@@ -8,11 +8,19 @@
     tools:context="com.moizest89.jbplandelalaguna.UI.Family.Details.FamilyDescriptionActivity"
     tools:showIn="@layout/activity_family_description">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/TVTDescription"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TVTDescription"
+            android:layout_margin="@dimen/text_margin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+
+    </FrameLayout>
+
 
 </android.support.v4.widget.NestedScrollView>
