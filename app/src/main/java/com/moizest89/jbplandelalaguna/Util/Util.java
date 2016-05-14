@@ -19,6 +19,7 @@ public class Util {
 
     public final static String INTENT_DATA_SEND = "data";
     public final static String INTENT_DATA_ORIGIN = "origin";
+    public final static String INTENT_DATA_CARROUSEL_POSITION = "position";
     public final static String INTENT_DATA_ORIGIN_QR_CODE = "qr_code";
     public final static String INTENT_DATA_ORIGIN_PLACE = "place";
     public final static String INTENT_ZONE_ID = "zone_id";

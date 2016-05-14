@@ -41,7 +41,7 @@
             android:layout_height="match_parent"
             android:id="@+id/TIVDetail"
             android:scaleType="fitCenter"
-            android:src="@drawable/place_map"/>
+            android:src="@drawable/principa_map"/>
     </FrameLayout>
 
 

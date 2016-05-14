@@ -50,6 +50,8 @@ public class FamilyDescriptionPresenter {
             @Override
             public void onFailure(Throwable t) {
                 Log.e(TAG, t.getMessage());
+                context.hideLoader();
+                context.setMessage("Ocurrio un error con la peticion, intentalo nuevamente");
             }
         });
 

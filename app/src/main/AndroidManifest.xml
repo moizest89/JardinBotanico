@@ -87,6 +87,14 @@
             android:name=".UI.Family.Details.FamilyDescriptionActivity"
             android:label="@string/title_activity_family_description"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Tips.Details.TipsListDetailsActivity"
+            android:label="@string/title_activity_tips_list_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Tips.Gallery.TipGalleryImagesActivity"
+            android:label="@string/title_activity_tip_gallery_images"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

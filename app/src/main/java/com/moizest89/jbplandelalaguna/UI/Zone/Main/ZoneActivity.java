@@ -84,6 +84,7 @@ public class ZoneActivity extends AppCompatActivity implements IZoneActivity,
 
             Intent intent = new Intent(ZoneActivity.this, ZoneDetailsActivity.class);
             intent.putExtra(Util.INTENT_ZONE_ID, position);
+            intent.putExtra(Util.INTENT_DATA_ORIGIN, Util.INTENT_DATA_ORIGIN_PLACE);
             startActivityForResult(intent,INTENT_ZONE_DETAILS);
 
         }

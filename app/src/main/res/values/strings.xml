@@ -266,5 +266,8 @@
     <string name="title_activity_zone_details">ZoneDetailsActivity</string>
     <string name="title_activity_family_description">FamilyDescriptionActivity</string>
     <string name="global_wait_load">Espere por favor...</string>
+    <string name="title_activity_tips_list_details">TipsListDetailsActivity</string>
+    <string name="general_label_gallery">Galeria de imagenes</string>
+    <string name="title_activity_tip_gallery_images">Galleria de Imagenes</string>
 
 </resources>

@@ -19,10 +19,12 @@ import com.moizest89.jbplandelalaguna.Data.models.Tip;
 import com.moizest89.jbplandelalaguna.Data.models.Tips;
 import com.moizest89.jbplandelalaguna.Data.models.TipsCategory;
 import com.moizest89.jbplandelalaguna.R;
+import com.moizest89.jbplandelalaguna.UI.Tips.Details.TipsListDetailsActivity;
 import com.moizest89.jbplandelalaguna.UI.Tips.Main.TipsAdapter;
 import com.moizest89.jbplandelalaguna.UI.Tips.Main.TipsPresenter;
 import com.moizest89.jbplandelalaguna.Util.Fonts;
 import com.moizest89.jbplandelalaguna.Util.MarginDecoration;
+import com.moizest89.jbplandelalaguna.Util.OnItemClickListener;
 import com.moizest89.jbplandelalaguna.Util.Util;
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -109,7 +111,7 @@ public class TipsListActivity extends AppCompatActivity implements  ITipsListVie
     }
 
     @Override
-    public void setData(List<Tip> tips) {
+    public void setData(final List<Tip> tips) {
 
         TipsListAdapter adapter = new TipsListAdapter(this, tips);
         this.RVList.setAdapter(adapter);
@@ -118,8 +120,24 @@ public class TipsListActivity extends AppCompatActivity implements  ITipsListVie
         if(this.SWRefresh.isRefreshing()){
             this.SWRefresh.setRefreshing(false);
         }
+
+        OnItemClickListener onItemClickListener = new OnItemClickListener() {
+            @Override
+            public void onItemClickListener(View view, Integer position) {
+                setTipDetails(tips.get(position));
+            }
+        };
+
+        adapter.setOnItemClickListener(onItemClickListener);
+
     }
 
+
+    private void setTipDetails(Tip tip){
+        Intent intent = new Intent(TipsListActivity.this, TipsListDetailsActivity.class);
+        intent.putExtra(Util.INTENT_DATA_SEND, tip);
+        startActivity(intent);
+    }
 
     @Override
     public void showLoading() {

@@ -84,8 +84,8 @@ public class ZoneDetailsAdapter extends PagerAdapter {
 
         Glide.with(context)
                 .load(this.mData.get(position))
-                .placeholder(R.drawable.ic_launcher) // can also be a drawable
-                .error(R.drawable.ic_launcher) // will be displayed if the image cannot be loaded
+                .placeholder(R.drawable.holder_rectangular) // can also be a drawable
+                .error(R.drawable.holder_rectangular) // will be displayed if the image cannot be loaded
                 .crossFade()
                 .into(IVDescriptiom);
 

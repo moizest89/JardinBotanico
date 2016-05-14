@@ -1,8 +1,7 @@
 package com.moizest89.jbplandelalaguna.UI.BarcodeView;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
+
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -17,37 +16,65 @@ import com.moizest89.jbplandelalaguna.UI.Family.Details.FamilyDescriptionActivit
 import com.moizest89.jbplandelalaguna.UI.Zone.Details.ZoneDetailsActivity;
 import com.moizest89.jbplandelalaguna.Util.Util;
 
-import me.sudar.zxingorient.Barcode;
-import me.sudar.zxingorient.ZxingOrient;
-import me.sudar.zxingorient.ZxingOrientResult;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import me.dm7.barcodescanner.zbar.Result;
+import me.dm7.barcodescanner.zbar.ZBarScannerView;
 
 public class BarcodeActivity extends AppCompatActivity{
 
 
     private final static String TAG =BarcodeActivity.class.getSimpleName();
 
+    @Bind(R.id.BarCode)
+    ZBarScannerView zBarScannerView;
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barcode);
 
-        scanNow();
+        ButterKnife.bind(this);
+
+
+
+//        scanNow();
+
+        Handler();
 
     }
 
 
-    public void scanNow(){
+    private void Handler(){
+        this.zBarScannerView.setResultHandler(new ZBarScannerView.ResultHandler() {
+            @Override
+            public void handleResult(Result rawResult) {
 
-        new ZxingOrient(BarcodeActivity.this)
-                .showInfoBox(false) // Doesn't display the info box
-                .setBeep(false)  // Doesn't play beep sound
-                .setVibration(true)  // Enables the vibration
-                .setIcon(R.drawable.ic_launcher)
-                .setToolbarColor("#AA00796B")
-                .setInfoBoxColor("#AA00796B")
-                .setInfo("Escanea el codigo QR")
-                .initiateScan(Barcode.QR_CODE);
+                Log.e(TAG, "rawResult: " + rawResult);
+                Log.e(TAG,"rawResult.getContents(): "+ rawResult.getContents().toString());
+                Log.e(TAG, "rawResult.getContents()"+ rawResult.getBarcodeFormat().toString()); // Prints the scan format (qrcode, pdf417 etc.)
+
+                redirectSpecificDetails(rawResult.getContents().toString());
+                // If you would like to resume scanning, call this method below:
+//                zBarScannerView.resumeCameraPreview(this);
+            }
+        });
     }
+
+//    public void scanNow(){
+//
+//        new ZxingOrient(BarcodeActivity.this)
+//                .showInfoBox(false) // Doesn't display the info box
+//                .setBeep(false)  // Doesn't play beep sound
+//                .setVibration(true)  // Enables the vibration
+//                .setIcon(R.drawable.ic_launcher)
+//                .setToolbarColor("#AA00796B")
+//                .setInfoBoxColor("#AA00796B")
+//                .setInfo("Escanea el codigo QR")
+//                .initiateScan(Barcode.QR_CODE);
+//    }
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 //        IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
@@ -60,7 +87,7 @@ public class BarcodeActivity extends AppCompatActivity{
 //
 //        Log.e(TAG, "scanningResult: "+scanningResult);
 
-        if(resultCode == RESULT_OK) {
+        if(resultCode == RESULT_OK) {}
 
 //            if (scanningResult != null) {
 //                String scanContent = scanningResult.getContents();
@@ -74,20 +101,20 @@ public class BarcodeActivity extends AppCompatActivity{
 //                Toast toast = Toast.makeText(getApplicationContext(), "No scan data received!", Toast.LENGTH_SHORT);
 //                toast.show();
 //            }
-            ZxingOrientResult scanResult = ZxingOrient.parseActivityResult(requestCode, resultCode, intent);
-
-            if (scanResult != null) {
-                String scanContent = scanResult.getContents();
-                String scanFormat = scanResult.getFormatName();
-
-                Log.e(TAG, "FORMAT: " + scanFormat);
-                Log.e(TAG, "CONTENT: " + scanContent);
-
-                redirectSpecificDetails(scanContent);
-            }
-        }else{
-            finish();
-        }
+//            ZxingOrientResult scanResult = ZxingOrient.parseActivityResult(requestCode, resultCode, intent);
+//
+//            if (scanResult != null) {
+//                String scanContent = scanResult.getContents();
+//                String scanFormat = scanResult.getFormatName();
+//
+//                Log.e(TAG, "FORMAT: " + scanFormat);
+//                Log.e(TAG, "CONTENT: " + scanContent);
+//
+//                redirectSpecificDetails(scanContent);
+//            }
+//        }else{
+//            finish();
+//        }
 
     }
 
@@ -95,6 +122,8 @@ public class BarcodeActivity extends AppCompatActivity{
 
     private void redirectSpecificDetails(String mContent){
         //family_info
+
+        Log.e(TAG, "redirectSpecificDetails: "+mContent);
 
         boolean family = mContent.matches("/family_info(?i).*");
         boolean zone = mContent.matches("/zone_families(?i).*");
@@ -118,4 +147,24 @@ public class BarcodeActivity extends AppCompatActivity{
         finish();
     }
 
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if(this.zBarScannerView !=null){
+            Handler();
+            this.zBarScannerView.startCamera();
+        }
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(this.zBarScannerView !=null){
+            this.zBarScannerView.stopCamera();
+        }
+    }
 }

@@ -51,7 +51,7 @@ public class ZoneDetailsPresenter {
 
     public void getDataByPosition(Integer position){
 
-        Log.e(TAG, "URL " + RestClient.URL_ZONE_FAMILIES + position);
+
 
         String mUrl = RestClient.URL_ZONE_FAMILIES + position.toString();
 
@@ -60,6 +60,9 @@ public class ZoneDetailsPresenter {
     }
 
     private void getGata(String mUrl){
+
+        Log.e(TAG, "URL " + mUrl);
+
         JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET,mUrl,null,
                 new com.android.volley.Response.Listener<JSONObject>() {
                     @Override

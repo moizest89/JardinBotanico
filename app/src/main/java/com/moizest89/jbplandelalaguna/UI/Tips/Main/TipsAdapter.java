@@ -15,6 +15,7 @@ import com.moizest89.jbplandelalaguna.R;
 import com.moizest89.jbplandelalaguna.Util.Fonts;
 import com.moizest89.jbplandelalaguna.Util.ImageViewWithRatio;
 import com.moizest89.jbplandelalaguna.Util.OnItemClickListener;
+import com.moizest89.jbplandelalaguna.Util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,9 +51,9 @@ public class TipsAdapter extends RecyclerView.Adapter<TipsAdapter.Holder> {
         holder.TVTitle.setTypeface(new Fonts().RobotoCondensed_Regular(this.context));
 
         Glide.with(context)
-                .load(category.getBannerImageUrl())
-//                .placeholder(R.drawable.placeholder) // can also be a drawable
-//                .error(R.drawable.placeholder) // will be displayed if the image cannot be loaded
+                .load(Util.modifyDropboxUrl(category.getBannerImageUrl()))
+                .placeholder(R.drawable.holder_square) // can also be a drawable
+                .error(R.drawable.holder_square) // will be displayed if the image cannot be loaded
                 .centerCrop()
                 .into(holder.IVCell);
     }

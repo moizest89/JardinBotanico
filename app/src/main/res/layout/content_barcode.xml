@@ -8,5 +8,11 @@
     tools:context="com.moizest89.jbplandelalaguna.UI.BarcodeView.BarcodeActivity"
     tools:showIn="@layout/activity_barcode">
 
+    <me.dm7.barcodescanner.zbar.ZBarScannerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/BarCode">
+
+    </me.dm7.barcodescanner.zbar.ZBarScannerView>
 
 </FrameLayout>

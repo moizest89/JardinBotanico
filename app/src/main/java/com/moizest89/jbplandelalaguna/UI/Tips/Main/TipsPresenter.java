@@ -56,6 +56,8 @@ public class TipsPresenter {
             @Override
             public void onFailure(Throwable t) {
                 Log.e(TAG, t.getMessage());
+                context.hideLoading();
+                context.setMessageDataError();
             }
         });
 
@@ -68,22 +70,9 @@ public class TipsPresenter {
         if(categories.getCategories().size() > 0){
             this.context.setData(categories);
         }else{
-
+            context.setMessageDataEmpty();
         }
-//        Gson gson = new Gson();
-//        List<TipsCategory> tipsCategoryList = new ArrayList<>();
-//        try {
-//            for (int cat = 0; cat < response.length(); cat++) {
-//                    TipsCategory tipsCategory = gson.fromJson(String.valueOf(response.get(cat)), TipsCategory.class);
-//                    tipsCategoryList.add(tipsCategory);
-//            }
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//            Log.e(TAG, e.getMessage());
-//        }
 
-//        this.context.setData(tipsCategoryList);
         this.context.hideLoading();
         this.context.showData();
 

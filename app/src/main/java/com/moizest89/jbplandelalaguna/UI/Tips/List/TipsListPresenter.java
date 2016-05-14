@@ -49,14 +49,14 @@ public class TipsListPresenter {
                         context.hideLoading();
                         context.setMessageDataError();
                         break;
-                    case 400:
-
-                        break;
-                    default:
+                    case 200:
                         Tips tips = response.body();
                         if(tips !=null){
                             setData(tips);
                         }
+                        break;
+                    default:
+
                         break;
                 }
 
@@ -79,7 +79,7 @@ public class TipsListPresenter {
         if(tips.getTips().size() > 0){
             this.context.setData(tips.getTips());
         }else{
-            this.context.setMessageDataError();
+            this.context.setMessageDataEmpty();
         }
 
 

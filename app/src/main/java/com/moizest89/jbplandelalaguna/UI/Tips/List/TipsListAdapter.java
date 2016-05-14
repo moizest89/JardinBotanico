@@ -2,6 +2,7 @@ package com.moizest89.jbplandelalaguna.UI.Tips.List;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import com.moizest89.jbplandelalaguna.Data.models.TipImage;
 import com.moizest89.jbplandelalaguna.R;
 import com.moizest89.jbplandelalaguna.Util.Fonts;
 import com.moizest89.jbplandelalaguna.Util.ImageViewWithRatio;
+import com.moizest89.jbplandelalaguna.Util.OnItemClickListener;
+import com.moizest89.jbplandelalaguna.Util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +30,8 @@ public class TipsListAdapter extends RecyclerView.Adapter<TipsListAdapter.Holder
 
     private Context context;
     private List<Tip> mData = new ArrayList<>();
+
+    OnItemClickListener onItemClickListener;
 
     public TipsListAdapter(Context context, List<Tip> mData) {
         this.context = context;
@@ -48,16 +53,16 @@ public class TipsListAdapter extends RecyclerView.Adapter<TipsListAdapter.Holder
         holder.TVTipDescription.setTypeface(new Fonts().RobotoCondensed_Regular(this.context));
 
         holder.TVTipName.setText(tip.getName());
-        holder.TVTipDescription.setText(tip.getDescription());
+        holder.TVTipDescription.setText(Html.fromHtml(tip.getDescription()));
 
         //Image
         List<TipImage> tipImage = tip.getTipImages();
 
         if(tipImage.size() > 0) {
             Glide.with(context)
-                    .load(tipImage.get(0).getUrl())
-//                .placeholder(R.drawable.placeholder) // can also be a drawable
-//                .error(R.drawable.placeholder) // will be displayed if the image cannot be loaded
+                    .load(Util.modifyDropboxUrl(tipImage.get(0).getUrl()))
+                    .placeholder(R.drawable.holder_rectangular) // can also be a drawable
+                    .error(R.drawable.holder_rectangular) // will be displayed if the image cannot be loaded
                     .centerCrop()
                     .into(holder.IVTipImage);
         }
@@ -68,7 +73,7 @@ public class TipsListAdapter extends RecyclerView.Adapter<TipsListAdapter.Holder
         return this.mData.size();
     }
 
-    public class Holder extends RecyclerView.ViewHolder {
+    public class Holder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         @Bind(R.id.IVTipImage)
         ImageViewWithRatio IVTipImage;
@@ -82,10 +87,22 @@ public class TipsListAdapter extends RecyclerView.Adapter<TipsListAdapter.Holder
 
             ButterKnife.bind(this, itemView);
 
-            this.IVTipImage.setX(16.0f);
-            this.IVTipImage.setY(9.0f);
+            this.IVTipImage.setX(1.0f);
+            this.IVTipImage.setY(1.0f);
+
+            this.itemView.setOnClickListener(this);
 
 
         }
+
+        @Override
+        public void onClick(View v) {
+            onItemClickListener.onItemClickListener(v, getAdapterPosition());
+        }
+    }
+
+
+    public void setOnItemClickListener(final OnItemClickListener onItemClickListener){
+        this.onItemClickListener = onItemClickListener;
     }
 }

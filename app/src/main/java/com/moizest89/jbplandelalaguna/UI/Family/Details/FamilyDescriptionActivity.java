@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.moizest89.jbplandelalaguna.Data.models.Family;
@@ -112,7 +113,8 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
 
     @Override
     public void setMessage(String mMessage) {
-
+        Toast.makeText(FamilyDescriptionActivity.this, mMessage, Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     private void setDialog(){
@@ -141,8 +143,8 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
                 //ImageDetails
                 Glide.with(this)
                         .load(first_image.getUrl())
-                        .placeholder(R.drawable.ic_launcher) // can also be a drawable
-                        .error(R.drawable.ic_launcher) // will be displayed if the image cannot be loaded
+                        .placeholder(R.drawable.holder_rectangular) // can also be a drawable
+                        .error(R.drawable.holder_rectangular) // will be displayed if the image cannot be loaded
                         .centerCrop()
                         .into(this.ImageDetails);
 

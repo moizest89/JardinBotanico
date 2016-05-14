@@ -18,4 +18,7 @@ public interface ITipsView {
     void hideLoading();
     void goToTipList(Category categories);
 
+    void setMessageDataError();
+    void setMessageDataEmpty();
+
 }

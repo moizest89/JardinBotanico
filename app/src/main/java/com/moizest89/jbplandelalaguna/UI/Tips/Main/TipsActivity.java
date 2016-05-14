@@ -10,6 +10,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.moizest89.jbplandelalaguna.Data.models.Categories;
@@ -22,6 +23,8 @@ import com.moizest89.jbplandelalaguna.Util.MarginDecoration;
 import com.moizest89.jbplandelalaguna.Util.OnItemClickListener;
 import com.moizest89.jbplandelalaguna.Util.Util;
 import com.wang.avi.AVLoadingIndicatorView;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -38,6 +41,9 @@ public class TipsActivity extends AppCompatActivity implements ITipsView{
     AVLoadingIndicatorView AVLoader;
     @Bind(R.id.RVList)
     RecyclerView RVList;
+
+    @Bind(R.id.TVSetMessage)
+    TextView TVSetMessage;
 
 
     private TipsPresenter mPresenter;
@@ -104,8 +110,6 @@ public class TipsActivity extends AppCompatActivity implements ITipsView{
     }
 
 
-
-
     @Override
     public void showLoading() {
         this.AVLoader.animate().alpha(1).setDuration(Util.ANIMATION_DURATION);
@@ -124,4 +128,22 @@ public class TipsActivity extends AppCompatActivity implements ITipsView{
         startActivity(intent);
 
     }
+
+    @Override
+    public void setMessageDataError() {
+        String mMessage = this.getResources().getString(R.string.data_error);
+        this.TVSetMessage.setText("");
+        this.TVSetMessage.setText(mMessage);
+        this.TVSetMessage.animate().alpha(1).setDuration(Util.ANIMATION_DURATION);
+    }
+
+    @Override
+    public void setMessageDataEmpty() {
+        String mMessage = this.getResources().getString(R.string.data_empty);
+        this.TVSetMessage.setText("");
+        this.TVSetMessage.setText(mMessage);
+        this.TVSetMessage.animate().alpha(1).setDuration(Util.ANIMATION_DURATION);
+    }
+
+
 }
