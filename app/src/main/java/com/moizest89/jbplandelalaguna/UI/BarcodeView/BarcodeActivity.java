@@ -8,6 +8,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 
@@ -30,6 +31,9 @@ public class BarcodeActivity extends AppCompatActivity{
     @Bind(R.id.BarCode)
     ZBarScannerView zBarScannerView;
 
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -38,9 +42,7 @@ public class BarcodeActivity extends AppCompatActivity{
 
         ButterKnife.bind(this);
 
-
-
-//        scanNow();
+        setToolbar();
 
         Handler();
 
@@ -52,69 +54,35 @@ public class BarcodeActivity extends AppCompatActivity{
             @Override
             public void handleResult(Result rawResult) {
 
-                Log.e(TAG, "rawResult: " + rawResult);
-                Log.e(TAG,"rawResult.getContents(): "+ rawResult.getContents().toString());
-                Log.e(TAG, "rawResult.getContents()"+ rawResult.getBarcodeFormat().toString()); // Prints the scan format (qrcode, pdf417 etc.)
+//                Log.e(TAG, "rawResult: " + rawResult);
+//                Log.e(TAG, "rawResult.getContents(): " + rawResult.getContents().toString());
+//                Log.e(TAG, "rawResult.getContents()" + rawResult.getBarcodeFormat().toString()); // Prints the scan format (qrcode, pdf417 etc.)
 
                 redirectSpecificDetails(rawResult.getContents().toString());
-                // If you would like to resume scanning, call this method below:
-//                zBarScannerView.resumeCameraPreview(this);
             }
         });
     }
 
-//    public void scanNow(){
-//
-//        new ZxingOrient(BarcodeActivity.this)
-//                .showInfoBox(false) // Doesn't display the info box
-//                .setBeep(false)  // Doesn't play beep sound
-//                .setVibration(true)  // Enables the vibration
-//                .setIcon(R.drawable.ic_launcher)
-//                .setToolbarColor("#AA00796B")
-//                .setInfoBoxColor("#AA00796B")
-//                .setInfo("Escanea el codigo QR")
-//                .initiateScan(Barcode.QR_CODE);
-//    }
+    private void setToolbar(){
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle(getResources().getString(R.string.app_short_name));
+        getSupportActionBar().setSubtitle(getResources().getString(R.string.barcode_title));
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-//        IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
-//
-//        Log.e(TAG, "requestCode: "+requestCode);
-//        Log.e(TAG, "resultCode: "+resultCode);
-//
-//        Log.e(TAG, "RESULT_CANCELED: "+RESULT_CANCELED);
-//        Log.e(TAG, "RESULT_OK: "+RESULT_OK);
-//
-//        Log.e(TAG, "scanningResult: "+scanningResult);
+
 
         if(resultCode == RESULT_OK) {}
 
-//            if (scanningResult != null) {
-//                String scanContent = scanningResult.getContents();
-//                String scanFormat = scanningResult.getFormatName();
-//
-//                Log.e(TAG, "FORMAT: " + scanFormat);
-//                Log.e(TAG, "CONTENT: " + scanContent);
-//
-//
-//            } else {
-//                Toast toast = Toast.makeText(getApplicationContext(), "No scan data received!", Toast.LENGTH_SHORT);
-//                toast.show();
-//            }
-//            ZxingOrientResult scanResult = ZxingOrient.parseActivityResult(requestCode, resultCode, intent);
-//
-//            if (scanResult != null) {
-//                String scanContent = scanResult.getContents();
-//                String scanFormat = scanResult.getFormatName();
-//
-//                Log.e(TAG, "FORMAT: " + scanFormat);
-//                Log.e(TAG, "CONTENT: " + scanContent);
-//
-//                redirectSpecificDetails(scanContent);
-//            }
-//        }else{
-//            finish();
-//        }
 
     }
 
@@ -163,6 +131,14 @@ public class BarcodeActivity extends AppCompatActivity{
     @Override
     protected void onPause() {
         super.onPause();
+        if(this.zBarScannerView !=null){
+            this.zBarScannerView.stopCamera();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
         if(this.zBarScannerView !=null){
             this.zBarScannerView.stopCamera();
         }

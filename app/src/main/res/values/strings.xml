@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Jardin Botanico</string>
+    <string name="app_name_long">Jardin Botanico Plan de la Laguna</string>
     <string name="app_short_name">Jardin Botanico</string>
     <string name="app_short_sub_name">Plan de la laguna</string>
     <string name="action_settings">Settings</string>
@@ -249,18 +250,15 @@
         una amplia variedad de macetas de barro, plástico y accesorios de jardinería.
 
         \n
-        \n
-
-        Ubicado en Urbanización industrial
+        \nUbicado en Urbanización industrial
         Plan de La Laguna Antiguo Cuscatlán,
         contiguo al parque, con horario:
         Lunes a Domingo, de 8:00 a.m. a 6:00 p.m.
         y Puma Chiltiupán, frente a Centro Comercial Merliot,
         Santa Tecla con horario de 8:30 a.m. a 5:30 p.m. de Lunes a Domingo.
 
-        \n
-        Teléfono. +503 2243 8125 \n
-        Email: jardinbotanico@jardinbotanico.org.sv
+        \nTeléfono: +503 2243 8125
+        \nEmail: jardinbotanico@jardinbotanico.org.sv
 
     </string>
     <string name="title_activity_zone_details">ZoneDetailsActivity</string>
@@ -269,5 +267,6 @@
     <string name="title_activity_tips_list_details">TipsListDetailsActivity</string>
     <string name="general_label_gallery">Galeria de imagenes</string>
     <string name="title_activity_tip_gallery_images">Galleria de Imagenes</string>
+    <string name="barcode_title">Escanea el codigo QR</string>
 
 </resources>
