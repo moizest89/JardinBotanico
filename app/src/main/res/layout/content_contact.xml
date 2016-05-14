@@ -56,160 +56,160 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TableLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
-                android:orientation="horizontal">
-                <TableRow
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp">
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/contact_label_days"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_weight="0.6"
+                    android:textSize="16sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="30dp"
-                        android:layout_column="0"
-                        android:paddingBottom="30dp"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:layout_gravity="center"
-                        android:text="@string/contact_label_days"
-                        android:textColor="#FFFFFF"
-                        android:textStyle="bold"
-                        android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="5px"
+                    android:text="@string/contact_label_days_hours"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_weight="0.4" />
 
+            </LinearLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorAccent"
+                />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/contact_label_price"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_weight="0.6"
+                    android:textSize="16sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_weight="1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"
                         android:padding="5px"
-                        android:text="@string/contact_label_days_hours"
+                        android:text="@string/contact_price_adult"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
                         android:textSize="16sp"
-                        android:layout_column="1" />
-                </TableRow>
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="3dp"
-                    android:background="@color/colorAccent"
-                    />
-                <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" >
+                        android:id="@+id/TVRate2" />
                     <TextView
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="30dp"
-                        android:paddingBottom="30dp"
-                        android:layout_gravity="center"
-                        android:text="@string/contact_label_price"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="5px"
+                        android:text="@string/contact_price_kids"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
                         android:textSize="16sp" />
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_weight="1"
-                        android:layout_column="1"
-                        android:gravity="center"
-                        android:layout_gravity="center_horizontal"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.5"
-                            android:gravity="center"
-                            android:layout_gravity="center_horizontal"
-                            android:padding="5px"
-                            android:text="@string/contact_price_adult"
-                            android:textColor="#FFFFFF"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            android:id="@+id/TVRate2" />
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.5"
-                            android:gravity="center"
-                            android:layout_gravity="center_horizontal"
-                            android:padding="5px"
-                            android:text="@string/contact_price_kids"
-                            android:textColor="#FFFFFF"
-                            android:textStyle="bold"
-                            android:textSize="16sp" />
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.5"
-                            android:gravity="center"
-                            android:layout_gravity="center_horizontal"
-                            android:padding="5px"
-                            android:text="@string/contact_price_students"
-                            android:textColor="#FFFFFF"
-                            android:textStyle="bold"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-                </TableRow>
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="3dp"
-                    android:background="@color/colorAccent"
-                    />
-                <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" >
                     <TextView
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="30dp"
-                        android:paddingBottom="30dp"
-                        android:layout_gravity="center"
-                        android:text="@string/contact_label_telephones_numbers"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="5px"
+                        android:text="@string/contact_price_students"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
                         android:textSize="16sp" />
-                    <LinearLayout
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorAccent"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="0.6"
+                    android:layout_gravity="center"
+                    android:text="@string/contact_label_telephones_numbers"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:layout_column="1"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_weight="1"
-                        android:layout_column="1"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.5"
-                            android:gravity="center"
-                            android:layout_gravity="center_horizontal"
-                            android:padding="5px"
-                            android:text="@string/contact_label_phone_number_1"
-                            android:textColor="#FFFFFF"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                             />
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.5"
-                            android:gravity="center"
-                            android:layout_gravity="center_horizontal"
-                            android:padding="5px"
-                            android:text="@string/contact_label_phone_number_2"
-                            android:textColor="#FFFFFF"
-                            android:textStyle="bold"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-                </TableRow>
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="3dp"
-                    android:background="@color/colorAccent" />
-            </TableLayout>
+                        android:padding="5px"
+                        android:text="@string/contact_label_phone_number_1"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:autoLink="email|phone"
+                        android:textSize="16sp"
+                        />
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="5px"
+                        android:text="@string/contact_label_phone_number_2"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:autoLink="email|phone"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorAccent" />
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

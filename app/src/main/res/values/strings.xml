@@ -110,8 +110,8 @@
     <string name="contact_price_kids">Niños: $0.75</string>
     <string name="contact_price_students">Estudiantes cita previa $0.60</string>
     <string name="contact_label_telephones_numbers">Telefonos</string>
-    <string name="contact_label_phone_number_1">(503) 2243 - 2012</string>
-    <string name="contact_label_phone_number_2">(503) 2243 - 2013</string>
+    <string name="contact_label_phone_number_1">(503) 2243-2012</string>
+    <string name="contact_label_phone_number_2">(503) 2243-2013</string>
     <string name="contact_label_email">jardinbotanico@jardinbotanico.org.sv</string>
     <string name="contact_label_send_email">Envianos un correo</string>
     <string name="contact_label_how_to_arrive">¿Sabes como llegar?</string>
