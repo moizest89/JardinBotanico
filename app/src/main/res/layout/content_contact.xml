@@ -32,24 +32,20 @@
             android:scaleType="centerCrop"
             android:src="@drawable/history_2" />
     </RelativeLayout>
-    <TextView
+    <View
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="3dp"
         android:gravity="center"
         android:padding="15dp"
-        android:text="@string/contact_rate"
-        android:background="#1A75BD"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        android:background="@color/colorAccent"
         android:id="@+id/textView2"
-        android:visibility="invisible"
         android:layout_below="@+id/RLOpenHour"
         android:layout_centerHorizontal="true" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/textView2"
+        android:background="@color/colorAccent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
         <LinearLayout
@@ -61,7 +57,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingBottom="15dp"
-                android:paddingTop="15dp">
+                android:paddingTop="15dp"
+                android:background="@color/colorPrimaryDark">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,7 +93,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingBottom="15dp"
-                android:paddingTop="15dp">
+                android:paddingTop="15dp"
+                android:background="@color/colorPrimaryDark">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -160,7 +158,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingBottom="15dp"
-                android:paddingTop="15dp">
+                android:paddingTop="15dp"
+                android:background="@color/colorPrimaryDark">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -190,6 +189,7 @@
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"
                         android:autoLink="email|phone"
+                        android:textColorLink="#FFFFFF"
                         android:textSize="16sp"
                         />
                     <TextView
@@ -201,6 +201,7 @@
                         android:padding="5px"
                         android:text="@string/contact_label_phone_number_2"
                         android:textColor="#FFFFFF"
+                        android:textColorLink="#FFFFFF"
                         android:textStyle="bold"
                         android:autoLink="email|phone"
                         android:textSize="16sp" />
@@ -214,12 +215,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:background="@null"
+                android:background="@color/colorPrimaryDark"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:id="@+id/BTSendEmail"
                 android:text="@string/contact_label_send_email"
+
                 />
             <View
                 android:layout_width="fill_parent"
@@ -229,12 +231,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:background="@null"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:id="@+id/BThowToArrive"
                 android:text="@string/contact_label_how_to_arrive"
+                android:background="@color/colorPrimaryDark"
                 />
 
         </LinearLayout>
