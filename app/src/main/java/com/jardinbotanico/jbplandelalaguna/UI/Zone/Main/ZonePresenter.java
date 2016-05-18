@@ -25,7 +25,7 @@ public class ZonePresenter {
     public void loadDataForSpinner(){
 
         List<String> mData = new ArrayList<>();
-        for (int i = 0; i < 32; i++) {
+        for (int i = 0; i < 33; i++) {
             if (i == 0) {
                 mData.add(this.mSpinnerHeader);
             } else{
