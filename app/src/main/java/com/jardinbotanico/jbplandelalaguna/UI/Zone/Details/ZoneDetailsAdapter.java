@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.jardinbotanico.jbplandelalaguna.R;
 import com.jardinbotanico.jbplandelalaguna.Util.TouchImageView;
+import com.jardinbotanico.jbplandelalaguna.Util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,7 +82,7 @@ public class ZoneDetailsAdapter extends PagerAdapter {
         TouchImageView IVDescriptiom = (TouchImageView) vi.findViewById(R.id.IVDescriptiom);
 
         Glide.with(context)
-                .load(this.mData.get(position))
+                .load(Util.modifyDropboxUrl(this.mData.get(position)))
                 .placeholder(R.drawable.holder_rectangular) // can also be a drawable
                 .error(R.drawable.holder_rectangular) // will be displayed if the image cannot be loaded
                 .crossFade()
