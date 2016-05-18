@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/colorPrimaryLight"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.moizest89.jbplandelalaguna.UI.Splash.SplashActivity"
+    tools:context="com.jardinbotanico.jbplandelalaguna.UI.Splash.SplashActivity"
     tools:showIn="@layout/activity_splash">
 
     <ImageView

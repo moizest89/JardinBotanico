@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.moizest89.jbplandelalaguna.UI.Contact.HowToArrive.HowToArriveActivity"
+    tools:context="com.jardinbotanico.jbplandelalaguna.UI.Contact.HowToArrive.HowToArriveActivity"
     tools:showIn="@layout/activity_how_to_arrive"
     android:background="@color/colorPrimaryLight">
 
-    <com.moizest89.jbplandelalaguna.Util.DynamicImageView
+    <com.jardinbotanico.jbplandelalaguna.Util.DynamicImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/DIVMap"

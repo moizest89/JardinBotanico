@@ -10,6 +10,8 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
 
+    <color name="red">#ff0703</color>
+
 
     <color name="transparent">#00000000</color>
     <color name="transparent_black_hex_1">#11000000</color>

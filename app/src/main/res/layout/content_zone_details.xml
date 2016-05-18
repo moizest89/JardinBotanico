@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.moizest89.jbplandelalaguna.UI.Zone.Details.ZoneDetailsActivity"
+    tools:context="com.jardinbotanico.jbplandelalaguna.UI.Zone.Details.ZoneDetailsActivity"
     tools:showIn="@layout/activity_zone_details">
 
 

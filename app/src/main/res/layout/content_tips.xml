@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryLight"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.moizest89.jbplandelalaguna.UI.Tips.Main.TipsActivity"
+    tools:context="com.jardinbotanico.jbplandelalaguna.UI.Tips.Main.TipsActivity"
     tools:showIn="@layout/activity_tips">
 
     <TextView

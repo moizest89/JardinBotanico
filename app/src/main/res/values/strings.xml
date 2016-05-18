@@ -25,71 +25,60 @@
     </string>
     <string name="history_about_text_2">
         Localización \n
-        \n
-        Jardín Botánico del Plan de la Laguna en el
+
+        \nJardín Botánico del Plan de la Laguna en el
         kilómetro Nº 8 de la carretera panamericana, zona
         industrial plan de La Laguna, al sur de la ciudad de
         Antiguo Cuscatlán, Departamento de La Libertad (zona central de El Salvador).
 
-        \n
-        Planos y vistas satelitales.13°40′20″N 89°15′00″O
+        \nPlanos y vistas satelitales.13°40′20″N 89°15′00″O
 
-        \n
-        - A 805 msnm.         \n
-
-
-        - Disfruta de una temperatura promedio de 23 °C y una humedad relativa de 75%.
+        \n- A 805 msnm.
+        \n- Disfruta de una temperatura promedio de 23 °C y una humedad relativa de 75%.
     </string>
     <string name="history_about_text_3">
-        Historia \n \n
-            En el fondo de un cráter existía
+            Historia
+
+            \n \nEn el fondo de un cráter existía
             durante muchos siglos una laguna,
              hasta que afines del siglo XVIII
              ocurrió la última erupción volcánica
              transformándola en una zona semipantanosa; drenándose en su mayor parte debido al terremoto de 1873.
-
-            \n
-            Luego se convirtió en un área
+            \nLuego se convirtió en un área
             muy fértil dedicándose por mucho
             tiempo a la ganadería; sin embargo
             parte de ella, pasó a formar parte
             de un jardín privado con árboles
             centenarios y otros traídos de muchas partes del mundo.
-
-            \n
-
-            En la década de los sesenta y setenta;
+            \n \nEn la década de los sesenta y setenta;
             se construyó, en una parte de la zona,
-             un complejo industrial y el jardín privado
-             fue entregado a una asociación privada
-             para su manejo y conservación.
-            \n
+            un complejo industrial y el jardín privado
+            fue entregado a una asociación privada
+            para su manejo y conservación.
 
-            Actualmente el sitio conocido como Jardín
+
+            \n \nActualmente el sitio conocido como Jardín
             Botánico La Laguna, fue abierto al público
             el 22 de diciembre de 1978, con una extensión
             total de 30 hectáreas; de las cuales 3.15 ha,
             con una topografía plana, son de uso público;
-             el resto es un bosque primario que se encuentra
-              bajo condiciones de estricta reserva.
+            el resto es un bosque primario que se encuentra
+            bajo condiciones de estricta reserva.
 
-            \n
-
-            Toda el área está distribuida en 32 zonas con
+            \n  \nToda el área está distribuida en 32 zonas con
             colecciones diversas de plantas, rotuladas por:
             tipo de planta, nombre común, nombre científico,
             familia y distribución; entre las que destacan:
             helechos, plantas del desierto, plantas medicinales,
-             huerto casero, orquídeas, bromelias y áreas
-              boscosas de vegetación nativa.
+            huerto casero, orquídeas, bromelias y áreas
+            boscosas de vegetación nativa.
 
-            \n
-            Asimismo tiene una biblioteca,
+            \n \nAsimismo tiene una biblioteca,
             zona de juegos para niños y niñas,
             en los que se pueden destacar;
             columpios, subideros, y entre otros.
-        \n
-        \n
+            \n
+            \n
     </string>
 
 
@@ -104,7 +93,7 @@
 
     <string name="contact_title">Contactanos</string>
     <string name="contact_label_days"> Martes a Domingo</string>
-    <string name="contact_label_days_hours">9:00a.m. a 5:30 p.m.</string>
+    <string name="contact_label_days_hours">9:00 a.m. a 5:30 p.m.</string>
     <string name="contact_label_price">Contribución</string>
     <string name="contact_price_adult">Adultos: $1.25</string>
     <string name="contact_price_kids">Niños: $0.75</string>
@@ -268,5 +257,8 @@
     <string name="general_label_gallery">Galeria de imagenes</string>
     <string name="title_activity_tip_gallery_images">Galleria de Imagenes</string>
     <string name="barcode_title">Escanea el codigo QR</string>
+
+
+    <string name="error_connection_message">Ocurrio un error con la petición, intentalo nuevamente.</string>
 
 </resources>

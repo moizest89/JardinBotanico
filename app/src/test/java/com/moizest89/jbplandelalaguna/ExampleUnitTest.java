@@ -1,4 +1,4 @@
-package com.moizest89.jbplandelalaguna;
+package com.jardinbotanico.jbplandelalaguna;
 
 import org.junit.Test;
 

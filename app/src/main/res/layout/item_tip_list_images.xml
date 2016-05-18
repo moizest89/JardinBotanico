@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.moizest89.jbplandelalaguna.Util.ImageViewWithRatio
+    <com.jardinbotanico.jbplandelalaguna.Util.ImageViewWithRatio
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"

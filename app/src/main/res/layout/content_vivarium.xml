@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.moizest89.jbplandelalaguna.Util.DynamicImageView
+        <com.jardinbotanico.jbplandelalaguna.Util.DynamicImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/vivarium_header"/>
@@ -44,7 +44,7 @@
                 card_view:cardUseCompatPadding="true"
                 >
 
-                    <com.moizest89.jbplandelalaguna.Util.ImageViewWithRatio
+                    <com.jardinbotanico.jbplandelalaguna.Util.ImageViewWithRatio
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/cactus_pequenos"
@@ -70,7 +70,7 @@
                 card_view:cardElevation="@dimen/card_elevation"
                 card_view:cardUseCompatPadding="true">
 
-                    <com.moizest89.jbplandelalaguna.Util.ImageViewWithRatio
+                    <com.jardinbotanico.jbplandelalaguna.Util.ImageViewWithRatio
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/IVImage_2"
@@ -103,7 +103,7 @@
                 card_view:cardElevation="@dimen/card_elevation"
                 card_view:cardUseCompatPadding="true">
 
-                <com.moizest89.jbplandelalaguna.Util.ImageViewWithRatio
+                <com.jardinbotanico.jbplandelalaguna.Util.ImageViewWithRatio
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/frutales_vivarium"
@@ -129,7 +129,7 @@
                 card_view:cardElevation="@dimen/card_elevation"
                 card_view:cardUseCompatPadding="true">
 
-                <com.moizest89.jbplandelalaguna.Util.ImageViewWithRatio
+                <com.jardinbotanico.jbplandelalaguna.Util.ImageViewWithRatio
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/IVImage_4"
@@ -163,7 +163,7 @@
                 card_view:cardElevation="@dimen/card_elevation"
                 card_view:cardUseCompatPadding="true">
 
-                <com.moizest89.jbplandelalaguna.Util.ImageViewWithRatio
+                <com.jardinbotanico.jbplandelalaguna.Util.ImageViewWithRatio
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/vivarium_rosales"
@@ -189,7 +189,7 @@
                 card_view:cardElevation="@dimen/card_elevation"
                 card_view:cardUseCompatPadding="true">
 
-                <com.moizest89.jbplandelalaguna.Util.ImageViewWithRatio
+                <com.jardinbotanico.jbplandelalaguna.Util.ImageViewWithRatio
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/IVImage_6"

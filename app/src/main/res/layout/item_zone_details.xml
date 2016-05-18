@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
 
-    <com.moizest89.jbplandelalaguna.Util.TouchImageView
+    <com.jardinbotanico.jbplandelalaguna.Util.TouchImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/IVDescriptiom"
