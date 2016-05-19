@@ -151,7 +151,7 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
 
             List<FamilyImage> images = family.getFamilyImages();
 
-            setImages(images);
+
 
             //Banner
             String mBanner = family.getBanner();
@@ -164,11 +164,13 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
                         .into(this.ImageDetails);
             }
 
+            setImages(images, mBanner);
+
         }
     }
 
     //Pongo la galeria de imagenes
-    private void setImages(List<FamilyImage> data){
+    private void setImages(List<FamilyImage> data, String mBanner){
         this.RVList.addItemDecoration(new MarginDecoration(5, this));
         this.RVList.setHasFixedSize(true);
         final GridLayoutManager manager = new GridLayoutManager(this,3);
@@ -178,6 +180,10 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
         for (int i = 0; i < data.size(); i++) {
             FamilyImage familyImage = data.get(i);
             mImages.add(familyImage.getUrl());
+        }
+
+        if( !mBanner.equals("") ) {
+            mImages.add(0, mBanner);
         }
 
         FamilyDescriptionImagesAdapter adapter = new FamilyDescriptionImagesAdapter(this, data);
