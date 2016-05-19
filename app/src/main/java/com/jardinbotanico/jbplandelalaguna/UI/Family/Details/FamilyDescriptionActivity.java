@@ -152,19 +152,16 @@ public class FamilyDescriptionActivity extends AppCompatActivity implements IFam
             List<FamilyImage> images = family.getFamilyImages();
 
             setImages(images);
-            if(images.size() > 0) {
-                //Banner
-                FamilyImage first_image = images.get(0);
-                //ImageDetails
+
+            //Banner
+            String mBanner = family.getBanner();
+            if(!mBanner.equals("")) {
                 Glide.with(this)
-                        .load(first_image.getUrl())
+                        .load(Util.modifyDropboxUrl(family.getBanner()))
                         .placeholder(R.drawable.holder_rectangular) // can also be a drawable
                         .error(R.drawable.holder_rectangular) // will be displayed if the image cannot be loaded
                         .centerCrop()
                         .into(this.ImageDetails);
-
-
-
             }
 
         }

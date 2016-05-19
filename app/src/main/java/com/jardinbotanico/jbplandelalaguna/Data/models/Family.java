@@ -23,6 +23,9 @@ public class Family implements Parcelable {
     @SerializedName("description")
     @Expose
     private String description;
+    @SerializedName("banner")
+    @Expose
+    private String banner;
     @SerializedName("family_images")
     @Expose
     private List<FamilyImage> familyImages = new ArrayList<FamilyImage>();
@@ -84,6 +87,24 @@ public class Family implements Parcelable {
     /**
      *
      * @return
+     * The banner
+     */
+    public String getBanner() {
+        return banner;
+    }
+
+    /**
+     *
+     * @param banner
+     * The banner
+     */
+    public void setBanner(String banner) {
+        this.banner = banner;
+    }
+
+    /**
+     *
+     * @return
      * The familyImages
      */
     public List<FamilyImage> getFamilyImages() {
@@ -110,6 +131,7 @@ public class Family implements Parcelable {
         dest.writeValue(this.id);
         dest.writeString(this.name);
         dest.writeString(this.description);
+        dest.writeString(this.banner);
         dest.writeTypedList(familyImages);
     }
 
@@ -120,10 +142,11 @@ public class Family implements Parcelable {
         this.id = (Integer) in.readValue(Integer.class.getClassLoader());
         this.name = in.readString();
         this.description = in.readString();
+        this.banner = in.readString();
         this.familyImages = in.createTypedArrayList(FamilyImage.CREATOR);
     }
 
-    public static final Creator<Family> CREATOR = new Creator<Family>() {
+    public static final Parcelable.Creator<Family> CREATOR = new Parcelable.Creator<Family>() {
         @Override
         public Family createFromParcel(Parcel source) {
             return new Family(source);
